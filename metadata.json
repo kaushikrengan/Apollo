@@ -1,0 +1,6 @@
+{
+  "name": "Apollo",
+  "description": "AI-Powered Competency Development Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
