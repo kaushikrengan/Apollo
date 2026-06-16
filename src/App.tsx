@@ -38,46 +38,46 @@ export interface AssociateProfile {
 const INITIAL_COMPETENCIES: Competency[] = [
   {
     id: 'comp-1',
-    title: 'RAG Systems & Cognitive Indexing',
-    description: 'Context ingestion split-overlapping models, vector distance parameters alignment, and semantic query matching.',
+    title: 'Lean Production Systems',
+    description: 'Value stream modeling, continuous Kaizen cycles, bottleneck mitigation, and advanced cycle time tracking.',
     createdAt: 'June 10, 2026'
   },
   {
     id: 'comp-2',
-    title: 'Zero-Trust Secure Container Gates',
-    description: 'STRIDE taxonomy implementation, non-root system calibration, and automatic static security compliance.',
+    title: 'Zero Defect Quality Management',
+    description: 'Statistical Process Control implementation, IATF 16949 audit calibration, and FMEA risk validations.',
     createdAt: 'June 12, 2026'
   }
 ];
 
 const INITIAL_SKILLS: Skill[] = [
   {
-    id: 'rag-systems',
+    id: 'cycle-time-opt',
     competencyId: 'comp-1',
-    title: 'RAG Architecture & Indexing',
-    category: 'Core Engineering',
-    description: 'Vector databases, ingestion chunk sizes, query routing, and embeddings calculation.'
+    title: 'Cycle Time Optimization',
+    category: 'Core Manufacturing',
+    description: 'Time and motion studies, line balancing heuristics, layout modifications, and capacity planning.'
   },
   {
     id: 'ai-eval',
     competencyId: 'comp-1',
-    title: 'AI System Evaluation & Safety',
-    category: 'AI Quality',
-    description: 'Empirical response scoring, synthetic dataset logging, and safety safeguards.'
+    title: 'Value Stream Mapping',
+    category: 'Process Engineering',
+    description: 'Flow mapping, non-value add identification, lead time reduction, and 5S deployments.'
   },
   {
     id: 'threat-mod',
     competencyId: 'comp-2',
-    title: 'Threat Modeling & Security',
-    category: 'Cybersecurity',
-    description: 'STRIDE risk methodology, architectural logs auditing, and vulnerability patches.'
+    title: 'FMEA Risk Modeling',
+    category: 'Quality Assurance',
+    description: 'Failure mode taxonomy, risk priority number calculation, and mitigation planning protocols.'
   },
   {
     id: 'devsecops-pipeline',
     competencyId: 'comp-2',
-    title: 'DevSecOps Automation Gates',
-    category: 'Cybersecurity',
-    description: 'Inline scanner configs, GitHub action hooks for Docker validations.'
+    title: 'SPC Automation Gates',
+    category: 'Quality Assurance',
+    description: 'Inline sensor limit configs, automated Out-Of-Control action plans, and tolerance calibration.'
   }
 ];
 
@@ -85,11 +85,11 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
   {
     id: 'emp-adore',
     name: 'Adore Patel',
-    role: 'Senior QA Automations Engineer',
+    role: 'Senior Quality Automation Engineer',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'Behind',
     assignments: [
-      { skillId: 'rag-systems', currentScore: 54, targetScore: 85 },
+      { skillId: 'cycle-time-opt', currentScore: 54, targetScore: 85 },
       { skillId: 'ai-eval', currentScore: 68, targetScore: 80 },
       { skillId: 'threat-mod', currentScore: 72, targetScore: 80 },
       { skillId: 'devsecops-pipeline', currentScore: 41, targetScore: 80 }
@@ -98,11 +98,11 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
   {
     id: 'emp-marcus',
     name: 'Marcus Chen',
-    role: 'Lead System Automation Architect',
+    role: 'Lead Production Architect',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'On Track',
     assignments: [
-      { skillId: 'rag-systems', currentScore: 71, targetScore: 85 },
+      { skillId: 'cycle-time-opt', currentScore: 71, targetScore: 85 },
       { skillId: 'ai-eval', currentScore: 82, targetScore: 80 },
       { skillId: 'threat-mod', currentScore: 65, targetScore: 80 },
       { skillId: 'devsecops-pipeline', currentScore: 78, targetScore: 80 }
@@ -111,11 +111,11 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
   {
     id: 'emp-liam',
     name: 'Liam Novak',
-    role: 'Operations & DevOps Administrator',
+    role: 'Plant Operations Supervisor',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'On Track',
     assignments: [
-      { skillId: 'rag-systems', currentScore: 45, targetScore: 85 },
+      { skillId: 'cycle-time-opt', currentScore: 45, targetScore: 85 },
       { skillId: 'ai-eval', currentScore: 55, targetScore: 80 },
       { skillId: 'threat-mod', currentScore: 50, targetScore: 80 },
       { skillId: 'devsecops-pipeline', currentScore: 68, targetScore: 80 }
@@ -124,11 +124,11 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
   {
     id: 'emp-zoe',
     name: 'Zoe Brooks',
-    role: 'Junior Associate AI Developer',
+    role: 'Junior Process Control Engineer',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'Behind',
     assignments: [
-      { skillId: 'rag-systems', currentScore: 48, targetScore: 85 },
+      { skillId: 'cycle-time-opt', currentScore: 48, targetScore: 85 },
       { skillId: 'ai-eval', currentScore: 58, targetScore: 80 },
       { skillId: 'threat-mod', currentScore: 30, targetScore: 80 },
       { skillId: 'devsecops-pipeline', currentScore: 45, targetScore: 80 }

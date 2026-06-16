@@ -10,14 +10,14 @@ interface SandboxProps {
 }
 
 // ==========================================
-// 1. RAG ARCHITECTURE & INDEXING SANDBOX
+// 1. CYCLE TIME OPTIMIZATION SANDBOX (formerly RAG)
 // ==========================================
 export function RagSandbox({ onComplete }: SandboxProps) {
   const [chunkSize, setChunkSize] = useState(400);
   const [overlap, setOverlap] = useState(15);
   const [userInteracted, setUserInteracted] = useState(false);
 
-  const sampleText = "The Apollo cognitive ingestion pipeline extracts structured data. In Retrieval-Augmented Generation, we partition source text documents into split-overlapping segments. Choosing optimal sizes ensures the LLM retrieves high quality data without severe context noise.";
+  const sampleText = "The Apollo production tracking pipeline extracts machine-level telemetry. In cycle time optimization, we match tact boundaries with active station capacity. Choosing optimal speeds ensures the cell meets production goals without creating bottleneck queues.";
 
   // Calculate simulated parameters
   const totalChunks = Math.max(2, Math.ceil(1200 / (chunkSize - (chunkSize * (overlap / 100)))));
@@ -53,21 +53,21 @@ export function RagSandbox({ onComplete }: SandboxProps) {
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-zinc-100">
         <div>
           <span className="text-xs font-mono uppercase bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full font-semibold">Interactive Sandbox</span>
-          <h3 className="text-xl font-display font-medium text-slate-900 mt-2">Elastic Chunk Dimensioning</h3>
+          <h3 className="text-xl font-display font-medium text-slate-900 mt-2">Station Cadence Optimizer</h3>
         </div>
         <Sliders className="w-5 h-5 text-indigo-500" />
       </div>
 
       <p className="text-sm text-slate-500 mb-6 leading-relaxed">
-        Adjust chunk sizes and overlap fractions dynamically. Observe how documents are sliced, overlaps protect vocabulary links, and performance trade-offs swap.
+        Adjust expected cycle limits and buffer fractional margins dynamically. Observe how assemblies are prioritized, buffers absorb latency, and throughput yields map out.
       </p>
 
       {/* Control sliders */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="space-y-2.5 bg-slate-50 p-4 rounded-2xl border border-zinc-100">
           <div className="flex justify-between">
-            <span className="text-xs font-bold text-slate-700">Chunk Size Limit</span>
-            <span className="text-xs font-mono font-semibold text-indigo-600">{chunkSize} tokens</span>
+            <span className="text-xs font-bold text-slate-700">Target Station Target (s)</span>
+            <span className="text-xs font-mono font-semibold text-indigo-600">{chunkSize} sec</span>
           </div>
           <input 
             type="range" 
@@ -79,14 +79,14 @@ export function RagSandbox({ onComplete }: SandboxProps) {
             className="w-full accent-indigo-600 cursor-pointer h-1.5 bg-slate-200 rounded-lg appearance-none"
           />
           <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-            <span>Precise (100)</span>
-            <span>Noisy (1000)</span>
+            <span>Fast (100s)</span>
+            <span>Slow (1000s)</span>
           </div>
         </div>
 
         <div className="space-y-2.5 bg-slate-50 p-4 rounded-2xl border border-zinc-100">
           <div className="flex justify-between">
-            <span className="text-xs font-bold text-slate-700">Overlap Fraction</span>
+            <span className="text-xs font-bold text-slate-700">Target Line Buffer</span>
             <span className="text-xs font-mono font-semibold text-emerald-600">{overlap}%</span>
           </div>
           <input 

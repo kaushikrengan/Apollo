@@ -48,59 +48,59 @@ interface Step {
 export default function AILearningWorkspace({ skill, assignment, onExit, onSkillProgress }: AILearningWorkspaceProps) {
   const steps = useMemo<Step[]>(() => {
     // Determine skill-specific steps
-    if (skill.id === 'rag-systems') {
+    if (skill.id === 'cycle-time-opt') {
       return [
         {
           id: 'step-1',
           type: 'intro',
-          title: `Mastering RAG Architecture & Indexing`,
-          content: `Welcome! Let's do a fast conceptual and hands-on session to target core RAG systems gaps. We'll increase your mastery from ${assignment.currentScore}%.`,
+          title: `Mastering Cycle Time Optimization`,
+          content: `Welcome! Let's do a fast conceptual and hands-on session to target core station balancing gaps. We'll increase your mastery from ${assignment.currentScore}%.`,
         },
         {
           id: 'step-concept-1',
           type: 'concept',
-          title: `Foundations: Core Slicing Constraints`,
+          title: `Foundations: Balancing the Line`,
         },
         {
           id: 'step-sandbox',
           type: 'sandbox',
-          title: `Practical Trial: Vector Index Dimensioning`,
+          title: `Practical Trial: Cadence Simulator`,
         },
         {
           id: 'step-quiz',
           type: 'quiz',
-          title: `Why is an overlap window utilized when optimizations are configured?`,
+          title: `Why do engineers prioritize matching Cycle Time with Takt Time?`,
           options: [
-            { id: '1', text: 'To double the number of vector records for high retrieval confidence.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
-            { id: '2', text: 'To ensure context and structural continuity for sentences split across arbitrary chunk borders.', icon: <Shield className="w-10 h-10 mb-2 text-indigo-500" />, isCorrect: true },
-            { id: '3', text: 'To decrease the computational load on the embedding model during lookups.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+            { id: '1', text: 'To maximize robot operational speed regardless of shipping demand.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'To prevent overproduction bottlenecks while ensuring customer delivery schedules are met.', icon: <Shield className="w-10 h-10 mb-2 text-indigo-500" />, isCorrect: true },
+            { id: '3', text: 'To decrease the computational load on the inventory tracking sensors.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-rose-500" /> },
           ]
         },
         {
           id: 'step-build',
           type: 'build',
           title: 'Draft standard configuration strategy.',
-          content: 'To handle sudden semantic cuts predictably during ingest, we should...',
+          content: 'To handle sudden variation in machine capability, we should...',
           availableWords: [
             { id: 'w1', word: 'apply' },
-            { id: 'w2', word: 'recursive' },
-            { id: 'w3', word: 'character' },
-            { id: 'w4', word: 'split' },
-            { id: 'w5', word: 'overlapping' },
+            { id: 'w2', word: 'buffer' },
+            { id: 'w3', word: 'inventory' },
+            { id: 'w4', word: 'between' },
+            { id: 'w5', word: 'workstations' },
             { id: 'w6', word: 'bypass' },
-            { id: 'w7', word: 'encryption' }
+            { id: 'w7', word: 'scrap' }
           ],
           correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
         },
         {
           id: 'step-match',
           type: 'match',
-          title: 'Pair the RAG related concepts.',
+          title: 'Pair the manufacturing concepts.',
           pairs: [
-            { leftId: 'l1', leftText: 'Cosine Distance', rightId: 'r1', rightText: 'Similarity measurement' },
-            { leftId: 'l2', leftText: 'Overlapping', rightId: 'r2', rightText: 'Preserving edge contexts' },
-            { leftId: 'l3', leftText: 'Token Limit', rightId: 'r3', rightText: 'LLM capacity bounds' },
-            { leftId: 'l4', leftText: 'Embedding', rightId: 'r4', rightText: 'Vector math projection' }
+            { leftId: 'l1', leftText: 'Takt Time', rightId: 'r1', rightText: 'Customer demand heartbeat' },
+            { leftId: 'l2', leftText: 'Cycle Time', rightId: 'r2', rightText: 'Actual station execution speed' },
+            { leftId: 'l3', leftText: 'Yamazumi Board', rightId: 'r3', rightText: 'Workload balancing tool' },
+            { leftId: 'l4', leftText: 'Bottleneck', rightId: 'r4', rightText: 'Slowest step in production' }
           ],
           leftOrder: ['l2', 'l4', 'l1', 'l3'],
           rightOrder: ['r3', 'r1', 'r4', 'r2']
@@ -533,16 +533,16 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
 
                     {step.type === 'concept' && (
                        <div className="w-full max-w-3xl mx-auto space-y-6">
-                         {skill.id === 'rag-systems' && (
+                         {skill.id === 'cycle-time-opt' && (
                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                              <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
                                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
                                  1
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">Small Chunk Dimensions</h3>
-                               <p className="text-xs text-slate-450 font-mono">100 to 300 Tokens range</p>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Takt Time Calculation</h3>
+                               <p className="text-xs text-slate-450 font-mono">Customer Demand Rate</p>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 Partitions documentation into highly focused, isolated units. Elevates semantic search accuracy for exact lookup indices, but risks stripping adjacent context frames.
+                                 The heartbeat of the production system. It dictates the exact speed at which we must manufacture to satisfy customer shipment requirements without overflowing the warehouse.
                                </p>
                              </div>
 
@@ -550,18 +550,18 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                                <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
                                  2
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">Large Chunk Dimensions</h3>
-                               <p className="text-xs text-slate-450 font-mono">800 to 1000 Tokens range</p>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Cycle Time Limits</h3>
+                               <p className="text-xs text-slate-450 font-mono">Actual Process Time</p>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 Keeps complete paragraphs and structural layout outlines fully cohesive. However, feeds excessive word-noise to LLM contexts, dragging precision weights down.
+                                 The exact duration it takes a cell, human, or robot to finish one complete operational cycle. If cycle time exceeds takt time, we fail customer schedules.
                                </p>
                              </div>
 
                              <div className="col-span-1 md:col-span-2 bg-indigo-50/40 border border-indigo-200 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
                                <div className="space-y-1 text-left">
-                                 <h4 className="text-sm font-bold text-indigo-900 uppercase font-mono tracking-wider">The 15% Overlap Safeguard</h4>
+                                 <h4 className="text-sm font-bold text-indigo-900 uppercase font-mono tracking-wider">The Yamazumi Strategy</h4>
                                  <p className="text-xs sm:text-sm text-indigo-700 leading-relaxed">
-                                   Preserves contiguous dictionary links across partition thresholds, preventing crucial context from being severed during indexing.
+                                   Balance workloads effectively by stacking cycle times and ensuring no single station exceeds the calculated Takt Time threshold.
                                  </p>
                                </div>
                                <span className="px-4 py-1.5 bg-indigo-950 text-white rounded-full text-[10px] uppercase font-bold font-mono tracking-wider shrink-0">
@@ -654,7 +654,7 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                            </div>
                          )}
 
-                         {skill.id !== 'rag-systems' && skill.id !== 'ai-eval' && skill.id !== 'threat-mod' && skill.id !== 'devsecops-pipeline' && (
+                         {skill.id !== 'cycle-time-opt' && skill.id !== 'ai-eval' && skill.id !== 'threat-mod' && skill.id !== 'devsecops-pipeline' && (
                            <div className="bg-white border-2 border-zinc-200/80 rounded-3xl p-8 shadow-sm text-left space-y-5">
                              <h4 className="text-lg font-bold text-slate-900">Core Principles of {skill.title}</h4>
                              <p className="text-sm text-slate-600 leading-relaxed">
@@ -670,12 +670,12 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
 
                     {step.type === 'sandbox' && (
                        <div className="w-full">
-                         {skill.id === 'rag-systems' && <RagSandbox onComplete={goNext} />}
+                         {skill.id === 'cycle-time-opt' && <RagSandbox onComplete={goNext} />}
                          {skill.id === 'ai-eval' && <AiEvalSandbox onComplete={goNext} />}
                          {skill.id === 'threat-mod' && <ThreatModSandbox onComplete={goNext} />}
                          {skill.id === 'devsecops-pipeline' && <DevSecOpsSandbox onComplete={goNext} />}
                          
-                         {skill.id !== 'rag-systems' && skill.id !== 'ai-eval' && skill.id !== 'threat-mod' && skill.id !== 'devsecops-pipeline' && (
+                         {skill.id !== 'cycle-time-opt' && skill.id !== 'ai-eval' && skill.id !== 'threat-mod' && skill.id !== 'devsecops-pipeline' && (
                            <div className="bg-white border rounded-2xl p-6 shadow-sm max-w-xl mx-auto">
                               <h4 className="text-md font-bold mb-4">Fallback Playgrounds Sandbox</h4>
                               <p className="text-sm text-slate-500 mb-6">Explore compliance parameters dynamically.</p>

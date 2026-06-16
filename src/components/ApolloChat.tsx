@@ -17,15 +17,15 @@ interface ApolloChatProps {
 
 const MANAGER_PROMPTS = [
   "How can I help team members with 'Behind' skills progress?",
-  "What is the average competency score across our engineers?",
-  "Recommend a learning pathway to close RAG Systems gaps",
-  "How can space strategy affect new team competencies?"
+  "What is the average competency score across our plant divisions?",
+  "Recommend a learning pathway to close Cycle Time optimization gaps",
+  "How can space strategy affect new production competencies?"
 ];
 
 const ASSOCIATE_PROMPTS = [
-  "How can I get my software engineering skills back on track?",
-  "Explain RAG Systems and Overlapping Context models simply",
-  "Recommend a study schedule for secure container containerization",
+  "How can I get my production metrics back on track?",
+  "Explain Cycle Time and Takt Time models simply",
+  "Recommend a study schedule for Advanced Robotics implementation",
   "What active courses and quizzes are currently assigned to me?"
 ];
 
@@ -35,8 +35,8 @@ export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
       id: 'welcome',
       role: 'model',
       content: role === 'Manager' 
-        ? "Hello, Manager! I am **Apollo AI**, your strategic team competency advisor.\n\nAsk me about team progress metrics, closing competency gaps, or defining customized pathways."
-        : "Hello, Adore! I am **Apollo AI**, your personal learning and development chatbot advisor.\n\nAsk me how to pass your assigned quizzes, study RAG overlapping models, or get 'Behind' skills on track!",
+        ? "Hello, Manager! I am **Apollo AI**, your strategic team competency advisor.\n\nAsk me about division progress metrics, closing competency gaps, or defining customized pathways."
+        : "Hello, Adore! I am **Apollo AI**, your personal learning and development chatbot advisor.\n\nAsk me how to pass your assigned quizzes, study Cycle Time optimization models, or get 'Behind' skills on track!",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);

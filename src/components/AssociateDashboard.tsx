@@ -35,98 +35,98 @@ export interface TrainingCourse {
 }
 
 const STATIC_COURSES_DATA: Record<string, TrainingCourse> = {
-  'rag-systems': {
-    skillId: 'rag-systems',
-    skillName: 'RAG Architecture & Indexing',
-    category: 'Core Engineering',
-    description: 'Master robust context ingestion pipelines, similarity search, and tracking.',
+  'cycle-time-opt': {
+    skillId: 'cycle-time-opt',
+    skillName: 'Cycle Time Optimization',
+    category: 'Core Manufacturing',
+    description: 'Master time & motion studies, calculate tact time accurately, and balance assembly cell load metrics.',
     modules: [
       {
         id: 'rag-m1',
-        title: 'Chunk Size & Overlapping Bounds',
-        category: 'Core Theory',
-        narrative: "In Retrieval-Augmented Generation (RAG) pipelines, documents must be partitioned into segments (chunks) to respect LLM context window bounds.\n\nChoosing the right chunk size is a balancing act:\n- **Small Chunks** retain precise local facts but risk stripping critical adjacent contextual framing.\n- **Large Chunks** encapsulate full paragraphs but introduce severe retrieval \"noise\".\n\nAdding an overlap window of **15% to 20%** between contiguous chunks ensures that sentences split by hard boundaries have their full meaning preserved.",
+        title: 'Takt Time vs. Cycle Time metrics',
+        category: 'Process Engineering',
+        narrative: "In lean production environments, understanding the cadence of line throughput is critical.\n\nOptimizing shop floor throughput requires calculating limits:\n- **Takt Time** is the rate at which you need to complete a product to meet customer demand.\n- **Cycle Time** is the actual time it takes to complete one step of the assembly process.\n\nMatching Cycle Time to Takt Time ensures that your production line avoids overproduction while completely satisfying schedule targets.",
         quiz: {
-          question: "When optimizing a RAG system for document lookup, why is an overlap window utilized?",
+          question: "When optimizing an assembly line, why do engineers prioritize matching Cycle Time with Takt Time?",
           options: [
-            "To double the number of vector records for high retrieval confidence.",
-            "To ensure context and structural continuity for sentences split across arbitrary chunk borders.",
-            "To decrease the computational load on the embedding model during lookups."
+            "To maximize robot operational speed regardless of shipping demand.",
+            "To prevent overproduction bottlenecks while ensuring customer delivery schedules are met.",
+            "To decrease the computational load on the inventory tracking sensors."
           ],
           correctIndex: 1,
-          explanation: "Overlapping guarantees that terms severed by a token partition stay adjacent to their semantic context."
+          explanation: "Synchronizing these times prevents inventory build-up (overproduction) while hitting your guaranteed delivery SLAs."
         }
       }
     ]
   },
   'ai-eval': {
     skillId: 'ai-eval',
-    skillName: 'AI System Evaluation & Safety',
-    category: 'AI Quality',
-    description: 'Implement rigorous validation automated metrics including ROUGE.',
+    skillName: 'Value Stream Mapping',
+    category: 'Process Engineering',
+    description: 'Implement rigorous process flow charting to eliminate non-value added steps.',
     modules: [
       {
         id: 'eval-m1',
-        title: 'Quantitative Evaluation: ROUGE',
+        title: 'Non-Value Added Time (NVA)',
         category: 'Core Theory',
-        narrative: "How do we evaluate LLM responses at scale without hiring manual content raters? We employ statistical metric engines:\n\n- **BLEU (Bilingual Evaluation Understudy):** Measures n-gram Precision overlap.\n- **ROUGE (Recall-Oriented Understudy for Gisting Evaluation):** Measures n-gram Recall.\n\nA typical target threshold for enterprise compliance requires maintaining a minimum ROUGE-L score of 0.72.",
+        narrative: "How do we identify waste in a complex manufacturing line? We employ Value Stream Mapping:\n\n- **Value Added (VA):** Any step the customer is willing to pay for.\n- **Non-Value Added (NVA):** Steps that add no value but may be required (e.g. inspections).\n\nA typical target threshold for lean compliance requires reducing pure NVA (waste) by 15% per fiscal quarter.",
         quiz: {
-          question: "Which metric should a specialist deploy to confirm a bot contains all facts from the manual?",
+          question: "Which metric should a specialist deploy to confirm an assembly step adds value?",
           options: [
-            "BLEU, since precision checks keep sentences short.",
-            "ROUGE-L, as it optimizes for recall to verify retained knowledge.",
-            "Perplexity metrics, to ensure non-repetitive summaries."
+            "Wait times, since precision checks keep inventory lean.",
+            "Customer willingness to pay for the transformation taking place.",
+            "Material transport metrics, to ensure parts are moving."
           ],
           correctIndex: 1,
-          explanation: "ROUGE measures recall of n-gram sequences, verifying that essential reference information survived the summarization."
+          explanation: "Value-added steps fundamentally transform the product in a way the end-customer cares about and pays for."
         }
       }
     ]
   },
   'threat-mod': {
     skillId: 'threat-mod',
-    skillName: 'Threat Modeling & Security',
-    category: 'Cybersecurity',
-    description: 'Apply methodology to security boundaries, audit static code vulnerabilities.',
+    skillName: 'FMEA Risk Modeling',
+    category: 'Quality Assurance',
+    description: 'Apply standardized methodologies to product failures, and audit mitigation logs.',
     modules: [
       {
         id: 'threat-m1',
-        title: 'STRIDE Threat Taxonomy',
+        title: 'RPN (Risk Priority Number)',
         category: 'Core Theory',
-        narrative: "The STRIDE methodology guides security audits:\n\n- Spoofing: Acting as another identity.\n- Tampering: Modifying static files or active database records illegally.\n- Repudiation: Falsifying logs.\n- Information Disclosure: Leaking private configuration keys.\n- Denial of Service: Overloading system clusters.",
+        narrative: "The Failure Mode and Effects Analysis (FMEA) identifies risks:\n\n- Severity: How bad is the impact?\n- Occurrence: How often does the failure happen?\n- Detection: Can we catch it before it ships?\n\nMultiplying these gives the Risk Priority Number (RPN).",
         quiz: {
-          question: "An attacker alters a static Git commit history. What is this classification?",
+          question: "An engineer adds a vision camera to automatically catch defects. Which FMEA score decreases?",
           options: [
-            "Spoofing, because they pretend to be the compiler.",
-            "Tampering, because they modify data without authorization.",
-            "Information Disclosure, as histories are fully visible."
+            "Severity, because the defect is no longer dangerous.",
+            "Detection score, because we are more likely to catch it.",
+            "Occurrence, because the machine is fixed."
           ],
           correctIndex: 1,
-          explanation: "Tampering describes unauthorized static state or database modification."
+          explanation: "Adding inspections or sensors improves detection, which lowers the Detection multiplier and overall RPN."
         }
       }
     ]
   },
   'devsecops-pipeline': {
     skillId: 'devsecops-pipeline',
-    skillName: 'DevSecOps Automation Gates',
-    category: 'Cybersecurity',
-    description: 'Embed automated policy checklists and scanning stages into builds.',
+    skillName: 'SPC Automation Gates',
+    category: 'Quality Assurance',
+    description: 'Embed automated statistical controls and sensor stages into production lines.',
     modules: [
       {
         id: 'devsec-m1',
-        title: 'SCA & SAST Scanners',
+        title: 'UCL and LCL (Control Limits)',
         category: 'Core Theory',
-        narrative: "DevSecOps pipelines automate security. We use two main checking layers:\n- SAST (Static Application Security Testing): Scans written code files.\n- SCA (Software Composition Analysis): Inspects third-party dependencies against national databases of CVE vulnerabilities.\n\nAdding these gates inside continuous integration commits guarantees security.",
+        narrative: "SPC automation monitors quality telemetry. We use two main checking layers:\n- Upper Control Limit (UCL): The highest allowed variation before the process breaks.\n- Lower Control Limit (LCL): The lowest allowed variation.\n\nAdding these auto-stopping gates inside the PLC code prevents defective parts from moving to the next workstation.",
         quiz: {
-          question: "What is the primary difference between a SAST scan and an SCA scan?",
+          question: "What is the primary difference between a specification limit and a control limit?",
           options: [
-            "SAST scans your written source code for patterns, while SCA scans dependencies.",
-            "SAST tests active network endpoints, while SCA compiles local assembly assets.",
-            "SAST requires human code reviews, while SCA is completely manual."
+            "Control limits reflect actual process behavior; specification limits are customer requirements.",
+            "Specification limits apply to software; control limits apply to hardware.",
+            "Control limits require human audits; specification limits are strictly automated."
           ],
           correctIndex: 0,
-          explanation: "SAST checks the custom files you write; SCA audits the libraries you import."
+          explanation: "Control limits are calculated from normal statistical variation of the physical machines, while specification limits are set by engineering blueprints/customers."
         }
       }
     ]

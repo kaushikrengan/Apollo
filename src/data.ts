@@ -2,24 +2,24 @@ import { Competency, TeamComparisonItem, KPIStats } from './types';
 
 export const COMPETENCIES_DATA: Competency[] = [
   {
-    id: 'ai-engineering',
-    name: 'AI Engineering',
+    id: 'lean-manufacturing',
+    name: 'Lean Manufacturing',
     coverage: 74,
     target: 90,
     gap: 16,
     trend: '+12%',
     risk: 'High',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 82 },
-      { teamName: 'Product Team', coverage: 73 },
-      { teamName: 'DevOps Team', coverage: 69 },
-      { teamName: 'QA Team', coverage: 61 }
+      { teamName: 'Steering Systems Div', coverage: 82 },
+      { teamName: 'Valve Div', coverage: 73 },
+      { teamName: 'Friction Material Div', coverage: 69 },
+      { teamName: 'Die Casting Div', coverage: 61 }
     ],
     skillHealth: [
-      { skillName: 'Prompt Engineering', coverage: 84 },
-      { skillName: 'AI Deployment', coverage: 78 },
-      { skillName: 'AI Evaluation', coverage: 67 },
-      { skillName: 'RAG Systems', coverage: 52 }
+      { skillName: 'Value Stream Mapping', coverage: 84 },
+      { skillName: 'Kaizen Implementation', coverage: 78 },
+      { skillName: '5S Methodology', coverage: 67 },
+      { skillName: 'Six Sigma DMAIC', coverage: 52 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 48 },
@@ -27,30 +27,30 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 74 }
     ],
     insights: [
-      'QA Team is below target for AI Engineering.',
-      'RAG Systems remains the largest competency gap.',
-      'Quarterly growth is strong at +12% driven by recent workshop certifications.'
+      'Die Casting Div is below target for Lean Manufacturing.',
+      'Six Sigma DMAIC remains the largest competency gap.',
+      'Quarterly growth is strong at +12% driven by shop floor workshops.'
     ]
   },
   {
-    id: 'cloud-architecture',
-    name: 'Cloud Architecture',
+    id: 'quality-management',
+    name: 'Quality Management (QMS)',
     coverage: 84,
     target: 85,
     gap: 1,
     trend: '+6%',
     risk: 'Low',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 90 },
-      { teamName: 'DevOps Team', coverage: 88 },
-      { teamName: 'Product Team', coverage: 86 },
-      { teamName: 'QA Team', coverage: 72 }
+      { teamName: 'Steering Systems Div', coverage: 90 },
+      { teamName: 'Friction Material Div', coverage: 88 },
+      { teamName: 'Valve Div', coverage: 86 },
+      { teamName: 'Die Casting Div', coverage: 72 }
     ],
     skillHealth: [
-      { skillName: 'Cloud Native', coverage: 91 },
-      { skillName: 'Serverless', coverage: 85 },
-      { skillName: 'High Availability', coverage: 81 },
-      { skillName: 'IaC (Terraform)', coverage: 79 }
+      { skillName: 'IATF 16949 Compliance', coverage: 91 },
+      { skillName: 'APQP & PPAP', coverage: 85 },
+      { skillName: 'FMEA Analysis', coverage: 81 },
+      { skillName: 'Statistical Process Control', coverage: 79 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 70 },
@@ -58,29 +58,29 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 84 }
     ],
     insights: [
-      'Cloud Architecture target likely to be achieved next quarter.',
-      'Platform and DevOps teams lead adoption with extensive certifications.',
-      'QA Team has shown low compliance in infrastructure scripts.'
+      'QMS target likely to be achieved next quarter.',
+      'Steering and Friction divisions lead adoption with zero defect models.',
+      'Die Casting Div has shown low compliance in SPC deployment.'
     ]
   },
   {
     id: 'leadership',
-    name: 'Leadership',
+    name: 'Leadership & Ops Management',
     coverage: 62,
     target: 80,
     gap: 18,
     trend: '+2%',
     risk: 'Medium',
     teamContributions: [
-      { teamName: 'Product Team', coverage: 85 },
-      { teamName: 'DevOps Team', coverage: 60 },
-      { teamName: 'Platform Team', coverage: 55 },
-      { teamName: 'QA Team', coverage: 48 }
+      { teamName: 'Valve Div', coverage: 85 },
+      { teamName: 'Friction Material Div', coverage: 60 },
+      { teamName: 'Steering Systems Div', coverage: 55 },
+      { teamName: 'Die Casting Div', coverage: 48 }
     ],
     skillHealth: [
-      { skillName: 'Execution Excellence', coverage: 70 },
-      { skillName: 'Mentoring & Feedback', coverage: 66 },
-      { skillName: 'Strategic Vision', coverage: 58 },
+      { skillName: 'Shop Floor Management', coverage: 70 },
+      { skillName: 'Safety Leadership', coverage: 66 },
+      { skillName: 'Strategic Capacity Planning', coverage: 58 },
       { skillName: 'Change Management', coverage: 54 }
     ],
     trendAnalytics: [
@@ -90,29 +90,29 @@ export const COMPETENCIES_DATA: Competency[] = [
     ],
     insights: [
       'Leadership growth has slowed this quarter.',
-      'Product Team is leading in cross-functional alignment programs at 85%.',
-      'Under-indexing on strategic vision across engineering leads.'
+      'Valve Div is leading in cross-functional shifting programs at 85%.',
+      'Under-indexing on strategic capacity planning across plant leads.'
     ]
   },
   {
-    id: 'cybersecurity',
-    name: 'Cybersecurity',
+    id: 'industrial-iot',
+    name: 'Industrial IoT & Industry 4.0',
     coverage: 71,
     target: 85,
     gap: 14,
     trend: '-3%',
     risk: 'High',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 83 },
-      { teamName: 'DevOps Team', coverage: 72 },
-      { teamName: 'Product Team', coverage: 71 },
-      { teamName: 'QA Team', coverage: 58 }
+      { teamName: 'Steering Systems Div', coverage: 83 },
+      { teamName: 'Friction Material Div', coverage: 72 },
+      { teamName: 'Valve Div', coverage: 71 },
+      { teamName: 'Die Casting Div', coverage: 58 }
     ],
     skillHealth: [
-      { skillName: 'Identity & Access Mgmt', coverage: 78 },
-      { skillName: 'DevSecOps Automation', coverage: 75 },
-      { skillName: 'Threat Modeling', coverage: 68 },
-      { skillName: 'Incident Response', coverage: 63 }
+      { skillName: 'Predictive Maintenance', coverage: 78 },
+      { skillName: 'Sensor Integration', coverage: 75 },
+      { skillName: 'Machine Data Analytics', coverage: 68 },
+      { skillName: 'PLC Programming', coverage: 63 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 77 },
@@ -120,30 +120,30 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 71 }
     ],
     insights: [
-      'Cybersecurity coverage dropped 3% this quarter.',
-      'DevOps IAM configurations require immediate remediation.',
-      'QA security regression testing remains is an operational gap.'
+      'IIoT coverage dropped 3% this quarter due to equipment legacy.',
+      'Friction Material Div sensor configurations require immediate calibration.',
+      'Die Casting predictive analytics remains an operational gap.'
     ]
   },
   {
     id: 'systems-thinking',
-    name: 'Systems Thinking',
+    name: 'Production System Architecture',
     coverage: 88,
     target: 85,
     gap: -3,
     trend: '+8%',
     risk: 'Healthy',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 94 },
-      { teamName: 'Product Team', coverage: 91 },
-      { teamName: 'DevOps Team', coverage: 89 },
-      { teamName: 'QA Team', coverage: 78 }
+      { teamName: 'Steering Systems Div', coverage: 94 },
+      { teamName: 'Valve Div', coverage: 91 },
+      { teamName: 'Friction Material Div', coverage: 89 },
+      { teamName: 'Die Casting Div', coverage: 78 }
     ],
     skillHealth: [
-      { skillName: 'Feedback Loops Design', coverage: 91 },
-      { skillName: 'Complexity Scaling', coverage: 88 },
-      { skillName: 'Synthesis & Mapping', coverage: 86 },
-      { skillName: 'Mental Models Theory', coverage: 87 }
+      { skillName: 'Line Balancing', coverage: 91 },
+      { skillName: 'Cycle Time Optimization', coverage: 88 },
+      { skillName: 'Bottleneck Analysis', coverage: 86 },
+      { skillName: 'Plant Layout Design', coverage: 87 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 74 },
@@ -151,30 +151,30 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 88 }
     ],
     insights: [
-      'Systems Thinking competency exceeds target across all engineering team branches.',
-      'Outstanding system complexity scores in Platform Team.',
-      'Active development of cross-team workflow topologies.'
+      'Production System Architecture competency exceeds target across all branches.',
+      'Outstanding cycle time optimization in Steering Systems Div.',
+      'Active development of cross-plant workflow topologies.'
     ]
   },
   {
     id: 'product-safety',
-    name: 'Product Safety',
+    name: 'Product Safety & Ergonomics',
     coverage: 81,
     target: 95,
     gap: 14,
     trend: '+5%',
     risk: 'Healthy',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 85 },
-      { teamName: 'Product Team', coverage: 82 },
-      { teamName: 'DevOps Team', coverage: 78 },
-      { teamName: 'QA Team', coverage: 79 }
+      { teamName: 'Steering Systems Div', coverage: 85 },
+      { teamName: 'Valve Div', coverage: 82 },
+      { teamName: 'Friction Material Div', coverage: 78 },
+      { teamName: 'Die Casting Div', coverage: 79 }
     ],
     skillHealth: [
-      { skillName: 'Policy Auditing', coverage: 84 },
-      { skillName: 'Threat Defense', coverage: 80 },
-      { skillName: 'Security Sandboxing', coverage: 82 },
-      { skillName: 'Validation Pipelines', coverage: 78 }
+      { skillName: 'ISO 45001 Compliance', coverage: 84 },
+      { skillName: 'Workplace Ergonomics', coverage: 80 },
+      { skillName: 'Hazard Identification', coverage: 82 },
+      { skillName: 'Safety Critical Systems', coverage: 78 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 72 },
@@ -182,29 +182,29 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 81 }
     ],
     insights: [
-      'Product Safety certifications completed for core platform services.',
+      'Product Safety certifications completed for core assembly lines.',
       'High alignment with external compliance targets.'
     ]
   },
   {
-    id: 'system-architecture',
-    name: 'System Architecture',
+    id: 'advanced-robotics',
+    name: 'Advanced Robotics',
     coverage: 68,
     target: 85,
     gap: 17,
     trend: '+8%',
     risk: 'Medium',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 84 },
-      { teamName: 'DevOps Team', coverage: 72 },
-      { teamName: 'Product Team', coverage: 62 },
-      { teamName: 'QA Team', coverage: 54 }
+      { teamName: 'Steering Systems Div', coverage: 84 },
+      { teamName: 'Friction Material Div', coverage: 72 },
+      { teamName: 'Valve Div', coverage: 62 },
+      { teamName: 'Die Casting Div', coverage: 54 }
     ],
     skillHealth: [
-      { skillName: 'Microservices Topology', coverage: 74 },
-      { skillName: 'Orchestration Standards', coverage: 66 },
-      { skillName: 'System Telemetry', coverage: 70 },
-      { skillName: 'Multi-tenant Orchestration', coverage: 62 }
+      { skillName: 'Cobot Programming', coverage: 74 },
+      { skillName: 'Automated Guided Vehicles', coverage: 66 },
+      { skillName: 'Vision Systems Integrity', coverage: 70 },
+      { skillName: 'Robotic Cell Safety', coverage: 62 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 58 },
@@ -212,29 +212,29 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 68 }
     ],
     insights: [
-      'Product Team requires integration training on event-driven infrastructure.',
-      'System telemetry coverage is progressing with +8% delta.'
+      'Valve Div requires integration training on collaborative robots.',
+      'Vision Systems Integrity coverage is progressing with +8% delta.'
     ]
   },
   {
-    id: 'regulatory-compliance',
-    name: 'Regulatory Compliance',
+    id: 'supply-chain',
+    name: 'Supply Chain Resilience',
     coverage: 87,
     target: 95,
     gap: 8,
     trend: '+3%',
     risk: 'Healthy',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 90 },
-      { teamName: 'Product Team', coverage: 88 },
-      { teamName: 'DevOps Team', coverage: 85 },
-      { teamName: 'QA Team', coverage: 85 }
+      { teamName: 'Steering Systems Div', coverage: 90 },
+      { teamName: 'Valve Div', coverage: 88 },
+      { teamName: 'Friction Material Div', coverage: 85 },
+      { teamName: 'Die Casting Div', coverage: 85 }
     ],
     skillHealth: [
-      { skillName: 'SOC2 Audit Trail', coverage: 92 },
-      { skillName: 'GDPR Data Governance', coverage: 86 },
-      { skillName: 'Automated Compliance Engine', coverage: 83 },
-      { skillName: 'Threat Detection logs', coverage: 87 }
+      { skillName: 'Just-in-Time (JIT) Delivery', coverage: 92 },
+      { skillName: 'Inventory Optimization', coverage: 86 },
+      { skillName: 'Risk Mitigation', coverage: 83 },
+      { skillName: 'Demand Forecasting', coverage: 87 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 81 },
@@ -242,8 +242,8 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 87 }
     ],
     insights: [
-      'SOC2 Audit compliance achieved ahead of projection.',
-      'Automatic log monitoring deployed to DevOps automation stacks.'
+      'JIT compliance achieved ahead of projection across plants.',
+      'Automatic inventory monitoring deployed to ERP systems.'
     ]
   },
   {
@@ -255,16 +255,16 @@ export const COMPETENCIES_DATA: Competency[] = [
     trend: '+1%',
     risk: 'High',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 64 },
-      { teamName: 'DevOps Team', coverage: 62 },
-      { teamName: 'Product Team', coverage: 55 },
-      { teamName: 'QA Team', coverage: 51 }
+      { teamName: 'Steering Systems Div', coverage: 64 },
+      { teamName: 'Friction Material Div', coverage: 62 },
+      { teamName: 'Valve Div', coverage: 55 },
+      { teamName: 'Die Casting Div', coverage: 51 }
     ],
     skillHealth: [
-      { skillName: 'Failover Orchestration', coverage: 61 },
-      { skillName: 'DR Replication Audits', coverage: 56 },
-      { skillName: 'Multi-Region Topology', coverage: 59 },
-      { skillName: 'Real-time Alerting', coverage: 56 }
+      { skillName: 'Machine Breakdown Recovery', coverage: 61 },
+      { skillName: 'Tooling Disaster Recovery', coverage: 56 },
+      { skillName: 'Facility Power Failsafes', coverage: 59 },
+      { skillName: 'Shift Reallocation Protocols', coverage: 56 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 56 },
@@ -272,29 +272,29 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 58 }
     ],
     insights: [
-      'DR Replication drills are overdue for QA and Product clusters.',
-      'Backup storage latency exceeds default thresholds.'
+      'Machine breakdown response drills are overdue for Die Casting and Valve Divs.',
+      'Tooling recovery latency exceeds default thresholds.'
     ]
   },
   {
-    id: 'vendor-management',
-    name: 'Vendor Management',
+    id: 'supplier-quality',
+    name: 'Supplier Quality Assurance',
     coverage: 72,
     target: 80,
     gap: 8,
     trend: '+4%',
     risk: 'Low',
     teamContributions: [
-      { teamName: 'Platform Team', coverage: 76 },
-      { teamName: 'Product Team', coverage: 74 },
-      { teamName: 'DevOps Team', coverage: 70 },
-      { teamName: 'QA Team', coverage: 68 }
+      { teamName: 'Steering Systems Div', coverage: 76 },
+      { teamName: 'Valve Div', coverage: 74 },
+      { teamName: 'Friction Material Div', coverage: 70 },
+      { teamName: 'Die Casting Div', coverage: 68 }
     ],
     skillHealth: [
-      { skillName: 'Integration Assessments', coverage: 75 },
-      { skillName: 'Cost Optimization Scopes', coverage: 72 },
-      { skillName: 'Third-Party Policy Alignments', coverage: 71 },
-      { skillName: 'SLA Validation Tools', coverage: 70 }
+      { skillName: 'Supplier Auditing', coverage: 75 },
+      { skillName: 'Cost Optimization Mappers', coverage: 72 },
+      { skillName: 'Defect Rate Tracking', coverage: 71 },
+      { skillName: 'Incoming Inspection Validation', coverage: 70 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 65 },
@@ -302,38 +302,38 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 72 }
     ],
     insights: [
-      'SLA violations are auto-monitored. Review SLA coverage for SaaS partners.'
+      'Defect rates are auto-monitored. Review quality alignment for Tier-2 suppliers.'
     ]
   }
 ];
 
 export const TEAM_COMPARISON_DATA: TeamComparisonItem[] = [
-  { teamName: 'Platform Team', coverage: 82 },
-  { teamName: 'Product Team', coverage: 79 },
-  { teamName: 'DevOps Team', coverage: 69 },
-  { teamName: 'QA Team', coverage: 61 }
+  { teamName: 'Steering Systems Div', coverage: 82 },
+  { teamName: 'Valve Div', coverage: 79 },
+  { teamName: 'Friction Material Div', coverage: 69 },
+  { teamName: 'Die Casting Div', coverage: 61 }
 ];
 
 export const KPI_STATS: KPIStats = {
-  competenciesCount: 12,
+  competenciesCount: 10,
   avgCoverage: 76,
   atRiskCount: 3,
-  topTeam: 'Platform Team',
+  topTeam: 'Steering Systems Div',
   topTeamCoverage: 92,
   growth: '+11%'
 };
 
 export const GLOBAL_AI_INSIGHTS = [
-  { id: 'g1', text: 'Cybersecurity coverage dropped 3%.', priority: 'high', category: 'Risk' },
-  { id: 'g2', text: 'QA Team is below target for AI Engineering.', priority: 'high', category: 'Gap' },
-  { id: 'g3', text: 'Cloud Architecture target likely to be achieved next quarter.', priority: 'medium', category: 'Milestone' },
-  { id: 'g4', text: 'RAG Systems remains the largest competency gap.', priority: 'medium', category: 'Gap' },
-  { id: 'g5', text: 'Leadership growth has slowed this quarter.', priority: 'low', category: 'Trend' }
+  { id: 'g1', text: 'IIoT coverage dropped 3% due to legacy equipment.', priority: 'high', category: 'Risk' },
+  { id: 'g2', text: 'Die Casting Div is below target for Lean Manufacturing.', priority: 'high', category: 'Gap' },
+  { id: 'g3', text: 'QMS target likely to be achieved next quarter.', priority: 'medium', category: 'Milestone' },
+  { id: 'g4', text: 'Six Sigma DMAIC remains the largest competency gap.', priority: 'medium', category: 'Gap' },
+  { id: 'g5', text: 'Leadership capacity planning growth has slowed this quarter.', priority: 'low', category: 'Trend' }
 ];
 
 export const MOCK_USER = {
-  name: 'Sarah Jenkins',
-  role: 'Leader',
-  department: 'Engineering Department',
-  avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80'
+  name: 'Lakshmi Narayanan',
+  role: 'Plant Head (Demo)',
+  department: 'Operations',
+  avatar: 'https://images.unsplash.com/photo-1542614917-8178ee7ea2ff?auto=format&fit=crop&w=120&h=120&q=80'
 };
