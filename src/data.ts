@@ -2,8 +2,8 @@ import { Competency, TeamComparisonItem, KPIStats } from './types';
 
 export const COMPETENCIES_DATA: Competency[] = [
   {
-    id: 'lean-manufacturing',
-    name: 'Lean Manufacturing',
+    id: 'auto-sys-eng',
+    name: 'Automotive Systems Engineering',
     coverage: 74,
     target: 90,
     gap: 16,
@@ -16,10 +16,10 @@ export const COMPETENCIES_DATA: Competency[] = [
       { teamName: 'Die Casting Div', coverage: 61 }
     ],
     skillHealth: [
-      { skillName: 'Value Stream Mapping', coverage: 84 },
-      { skillName: 'Kaizen Implementation', coverage: 78 },
-      { skillName: '5S Methodology', coverage: 67 },
-      { skillName: 'Six Sigma DMAIC', coverage: 52 }
+      { skillName: 'Systems Thinking', coverage: 84 },
+      { skillName: 'Requirement Engineering', coverage: 78 },
+      { skillName: 'V Model Development', coverage: 67 },
+      { skillName: 'Verification and validation', coverage: 52 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 48 },
@@ -27,14 +27,14 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 74 }
     ],
     insights: [
-      'Die Casting Div is below target for Lean Manufacturing.',
-      'Six Sigma DMAIC remains the largest competency gap.',
-      'Quarterly growth is strong at +12% driven by shop floor workshops.'
+      'Die Casting Div is below target for Automotive Systems Engineering.',
+      'Verification and validation remains the largest competency gap.',
+      'Quarterly growth is strong at +12% driven by systems thinking workshops.'
     ]
   },
   {
-    id: 'quality-management',
-    name: 'Quality Management (QMS)',
+    id: 'dfm',
+    name: 'Design for Manufacturability',
     coverage: 84,
     target: 85,
     gap: 1,
@@ -47,10 +47,9 @@ export const COMPETENCIES_DATA: Competency[] = [
       { teamName: 'Die Casting Div', coverage: 72 }
     ],
     skillHealth: [
-      { skillName: 'IATF 16949 Compliance', coverage: 91 },
-      { skillName: 'APQP & PPAP', coverage: 85 },
-      { skillName: 'FMEA Analysis', coverage: 81 },
-      { skillName: 'Statistical Process Control', coverage: 79 }
+      { skillName: 'Tolerance Analysis', coverage: 91 },
+      { skillName: 'Material Selection', coverage: 85 },
+      { skillName: 'Cost Optimization', coverage: 81 }
     ],
     trendAnalytics: [
       { quarter: 'Q1', coverage: 70 },
@@ -58,9 +57,9 @@ export const COMPETENCIES_DATA: Competency[] = [
       { quarter: 'Q3', coverage: 84 }
     ],
     insights: [
-      'QMS target likely to be achieved next quarter.',
-      'Steering and Friction divisions lead adoption with zero defect models.',
-      'Die Casting Div has shown low compliance in SPC deployment.'
+      'DFM target likely to be achieved next quarter.',
+      'Steering and Friction divisions lead adoption with value engineering.',
+      'Die Casting Div has shown low compliance in tolerance stack-ups.'
     ]
   },
   {

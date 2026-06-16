@@ -38,46 +38,67 @@ export interface AssociateProfile {
 const INITIAL_COMPETENCIES: Competency[] = [
   {
     id: 'comp-1',
-    title: 'Lean Production Systems',
-    description: 'Value stream modeling, continuous Kaizen cycles, bottleneck mitigation, and advanced cycle time tracking.',
+    title: 'Automotive Systems Engineering',
+    description: 'Systems thinking workflows, requirement engineering, V-model lifecycle, and validation logic.',
     createdAt: 'June 10, 2026'
   },
   {
     id: 'comp-2',
-    title: 'Zero Defect Quality Management',
-    description: 'Statistical Process Control implementation, IATF 16949 audit calibration, and FMEA risk validations.',
+    title: 'Design for Manufacturability',
+    description: 'Tolerance variation analysis, cost engineering optimization, and material selection paradigms.',
     createdAt: 'June 12, 2026'
   }
 ];
 
 const INITIAL_SKILLS: Skill[] = [
   {
-    id: 'cycle-time-opt',
+    id: 'sys-think',
     competencyId: 'comp-1',
-    title: 'Cycle Time Optimization',
-    category: 'Core Manufacturing',
-    description: 'Time and motion studies, line balancing heuristics, layout modifications, and capacity planning.'
+    title: 'Systems Thinking',
+    category: 'Systems Engineering',
+    description: 'Analyzing the interactions between subsystems, electronic control units, and mechanical linkages.'
   },
   {
-    id: 'ai-eval',
+    id: 'req-eng',
     competencyId: 'comp-1',
-    title: 'Value Stream Mapping',
-    category: 'Process Engineering',
-    description: 'Flow mapping, non-value add identification, lead time reduction, and 5S deployments.'
+    title: 'Requirement Engineering',
+    category: 'Systems Engineering',
+    description: 'Eliciting, documenting, and managing traceability of stakeholder and system requirements.'
   },
   {
-    id: 'threat-mod',
-    competencyId: 'comp-2',
-    title: 'FMEA Risk Modeling',
-    category: 'Quality Assurance',
-    description: 'Failure mode taxonomy, risk priority number calculation, and mitigation planning protocols.'
+    id: 'v-model',
+    competencyId: 'comp-1',
+    title: 'V Model Development',
+    category: 'Lifecycle Management',
+    description: 'Following the V-model framework from concept and design down to implementation and upward validation.'
   },
   {
-    id: 'devsecops-pipeline',
+    id: 'verify-val',
+    competencyId: 'comp-1',
+    title: 'Verification and Validation',
+    category: 'Lifecycle Management',
+    description: 'Executing unit tests, hardware-in-the-loop (HIL) simulations, and final product validation.'
+  },
+  {
+    id: 'tol-analysis',
     competencyId: 'comp-2',
-    title: 'SPC Automation Gates',
-    category: 'Quality Assurance',
-    description: 'Inline sensor limit configs, automated Out-Of-Control action plans, and tolerance calibration.'
+    title: 'Tolerance Analysis',
+    category: 'Manufacturability',
+    description: 'Geometric dimensioning and tolerancing (GD&T), stack-ups, and statistical variance modeling.'
+  },
+  {
+    id: 'mat-selection',
+    competencyId: 'comp-2',
+    title: 'Material Selection',
+    category: 'Manufacturability',
+    description: 'Evaluating material properties for fatigue limits, weight reduction, and process compatibility.'
+  },
+  {
+    id: 'cost-opt',
+    competencyId: 'comp-2',
+    title: 'Cost Optimization',
+    category: 'Manufacturability',
+    description: 'Applying value engineering to reduce manufacturing steps and lower unit costs.'
   }
 ];
 
@@ -89,10 +110,13 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'Behind',
     assignments: [
-      { skillId: 'cycle-time-opt', currentScore: 54, targetScore: 85 },
-      { skillId: 'ai-eval', currentScore: 68, targetScore: 80 },
-      { skillId: 'threat-mod', currentScore: 72, targetScore: 80 },
-      { skillId: 'devsecops-pipeline', currentScore: 41, targetScore: 80 }
+      { skillId: 'sys-think', currentScore: 54, targetScore: 85 },
+      { skillId: 'req-eng', currentScore: 68, targetScore: 80 },
+      { skillId: 'v-model', currentScore: 45, targetScore: 80 },
+      { skillId: 'verify-val', currentScore: 62, targetScore: 85 },
+      { skillId: 'tol-analysis', currentScore: 72, targetScore: 80 },
+      { skillId: 'mat-selection', currentScore: 51, targetScore: 85 },
+      { skillId: 'cost-opt', currentScore: 41, targetScore: 80 }
     ]
   },
   {
@@ -102,10 +126,13 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'On Track',
     assignments: [
-      { skillId: 'cycle-time-opt', currentScore: 71, targetScore: 85 },
-      { skillId: 'ai-eval', currentScore: 82, targetScore: 80 },
-      { skillId: 'threat-mod', currentScore: 65, targetScore: 80 },
-      { skillId: 'devsecops-pipeline', currentScore: 78, targetScore: 80 }
+      { skillId: 'sys-think', currentScore: 71, targetScore: 85 },
+      { skillId: 'req-eng', currentScore: 82, targetScore: 80 },
+      { skillId: 'v-model', currentScore: 75, targetScore: 80 },
+      { skillId: 'verify-val', currentScore: 80, targetScore: 85 },
+      { skillId: 'tol-analysis', currentScore: 65, targetScore: 80 },
+      { skillId: 'mat-selection', currentScore: 78, targetScore: 85 },
+      { skillId: 'cost-opt', currentScore: 78, targetScore: 80 }
     ]
   },
   {
@@ -115,10 +142,13 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'On Track',
     assignments: [
-      { skillId: 'cycle-time-opt', currentScore: 45, targetScore: 85 },
-      { skillId: 'ai-eval', currentScore: 55, targetScore: 80 },
-      { skillId: 'threat-mod', currentScore: 50, targetScore: 80 },
-      { skillId: 'devsecops-pipeline', currentScore: 68, targetScore: 80 }
+      { skillId: 'sys-think', currentScore: 45, targetScore: 85 },
+      { skillId: 'req-eng', currentScore: 55, targetScore: 80 },
+      { skillId: 'v-model', currentScore: 60, targetScore: 80 },
+      { skillId: 'verify-val', currentScore: 70, targetScore: 85 },
+      { skillId: 'tol-analysis', currentScore: 50, targetScore: 80 },
+      { skillId: 'mat-selection', currentScore: 62, targetScore: 85 },
+      { skillId: 'cost-opt', currentScore: 68, targetScore: 80 }
     ]
   },
   {
@@ -128,10 +158,13 @@ const INITIAL_ASSOCIATES: AssociateProfile[] = [
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80',
     status: 'Behind',
     assignments: [
-      { skillId: 'cycle-time-opt', currentScore: 48, targetScore: 85 },
-      { skillId: 'ai-eval', currentScore: 58, targetScore: 80 },
-      { skillId: 'threat-mod', currentScore: 30, targetScore: 80 },
-      { skillId: 'devsecops-pipeline', currentScore: 45, targetScore: 80 }
+      { skillId: 'sys-think', currentScore: 48, targetScore: 85 },
+      { skillId: 'req-eng', currentScore: 58, targetScore: 80 },
+      { skillId: 'v-model', currentScore: 42, targetScore: 80 },
+      { skillId: 'verify-val', currentScore: 50, targetScore: 85 },
+      { skillId: 'tol-analysis', currentScore: 30, targetScore: 80 },
+      { skillId: 'mat-selection', currentScore: 40, targetScore: 85 },
+      { skillId: 'cost-opt', currentScore: 45, targetScore: 80 }
     ]
   }
 ];
@@ -360,8 +393,8 @@ export default function App() {
         <h1 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-[0.25em] text-slate-950 mb-4">
           Apollo
         </h1>
-        <p className="text-lg text-slate-500 mb-12 max-w-sm">
-          Select whether you are an Associate or a Manager to view and manage skills.
+        <p className="text-lg text-slate-500 mb-12 max-w-md mx-auto leading-relaxed">
+          Empowering teams with continuous AI driven learning.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl text-left">

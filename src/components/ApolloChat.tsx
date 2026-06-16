@@ -16,17 +16,17 @@ interface ApolloChatProps {
 }
 
 const MANAGER_PROMPTS = [
-  "How can I help team members with 'Behind' skills progress?",
-  "What is the average competency score across our plant divisions?",
-  "Recommend a learning pathway to close Cycle Time optimization gaps",
-  "How can space strategy affect new production competencies?"
+  "How can I help team members struggling with Tolerance Analysis?",
+  "What is the average System Thinking competency across divisions?",
+  "Recommend a learning pathway to close Value Engineering gaps",
+  "How can cost optimization affect new manufacturing competencies?"
 ];
 
 const ASSOCIATE_PROMPTS = [
-  "How can I get my production metrics back on track?",
-  "Explain Cycle Time and Takt Time models simply",
-  "Recommend a study schedule for Advanced Robotics implementation",
-  "What active courses and quizzes are currently assigned to me?"
+  "How can I get my requirement engineering tracing back on track?",
+  "Explain Root Sum Square tolerance analysis simply",
+  "Recommend a study schedule for Automotive System Architecture",
+  "What active simulation verification quizzes are assigned to me?"
 ];
 
 export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
@@ -36,7 +36,7 @@ export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
       role: 'model',
       content: role === 'Manager' 
         ? "Hello, Manager! I am **Apollo AI**, your strategic team competency advisor.\n\nAsk me about division progress metrics, closing competency gaps, or defining customized pathways."
-        : "Hello, Adore! I am **Apollo AI**, your personal learning and development chatbot advisor.\n\nAsk me how to pass your assigned quizzes, study Cycle Time optimization models, or get 'Behind' skills on track!",
+        : "Hello, Adore! I am **Apollo AI**, your personal learning and development chatbot advisor.\n\nAsk me how to pass your assigned quizzes, study statistical variance models, or get 'Behind' skills on track!",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -50,7 +50,7 @@ export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
     if (isOpen) {
       const welcomeContent = role === 'Manager'
         ? "Hello, Manager! I am **Apollo AI**, your strategic team competency advisor.\n\nAsk me about team progress metrics, closing competency gaps, or defining customized pathways."
-        : "Hello, Adore! I am **Apollo AI**, your personal learning and development chatbot advisor.\n\nAsk me how to pass your assigned quizzes, study RAG overlapping models, or get 'Behind' skills on track!";
+        : "Hello, Adore! I am **Apollo AI**, your personal learning and development chatbot advisor.\n\nAsk me how to pass your assigned quizzes, study engineering traceability models, or get 'Behind' skills on track!";
       
       setMessages([
         {
@@ -69,6 +69,17 @@ export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, isLoading]);
+
+  // Lock body scroll when open to prevent horizontal slide or scrollbar jank
+  useEffect(() => {
+    if (isOpen) {
+      const originalStyle = window.getComputedStyle(document.body).overflow;  
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
+    }
+  }, [isOpen]);
 
   // Handle send message
   const handleSendMessage = async (text: string) => {

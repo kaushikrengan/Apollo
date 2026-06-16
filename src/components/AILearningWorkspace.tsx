@@ -48,233 +48,407 @@ interface Step {
 export default function AILearningWorkspace({ skill, assignment, onExit, onSkillProgress }: AILearningWorkspaceProps) {
   const steps = useMemo<Step[]>(() => {
     // Determine skill-specific steps
-    if (skill.id === 'cycle-time-opt') {
+    if (skill.id === 'sys-think') {
       return [
         {
           id: 'step-1',
           type: 'intro',
-          title: `Mastering Cycle Time Optimization`,
-          content: `Welcome! Let's do a fast conceptual and hands-on session to target core station balancing gaps. We'll increase your mastery from ${assignment.currentScore}%.`,
+          title: `Mastering Systems Thinking`,
+          content: `Welcome! Let's examine how subsystems integrate and affect overall vehicle behavior. We'll increase your mastery from ${assignment.currentScore}%.`,
         },
         {
           id: 'step-concept-1',
           type: 'concept',
-          title: `Foundations: Balancing the Line`,
+          title: `Foundations: Boundaries and Interactions`,
         },
         {
           id: 'step-sandbox',
           type: 'sandbox',
-          title: `Practical Trial: Cadence Simulator`,
+          title: `System Coupling Simulator`,
         },
         {
           id: 'step-quiz',
           type: 'quiz',
-          title: `Why do engineers prioritize matching Cycle Time with Takt Time?`,
+          title: `Which of the following is an example of an emergent property in automotive systems?`,
           options: [
-            { id: '1', text: 'To maximize robot operational speed regardless of shipping demand.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
-            { id: '2', text: 'To prevent overproduction bottlenecks while ensuring customer delivery schedules are met.', icon: <Shield className="w-10 h-10 mb-2 text-indigo-500" />, isCorrect: true },
-            { id: '3', text: 'To decrease the computational load on the inventory tracking sensors.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-rose-500" /> },
+            { id: '1', text: 'The weight of a single brake pad in isolation.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'Vehicle stopping distance under changing weather and load conditions.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '3', text: 'The painted color of the rear bumper component.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
           ]
         },
         {
           id: 'step-build',
           type: 'build',
-          title: 'Draft standard configuration strategy.',
-          content: 'To handle sudden variation in machine capability, we should...',
+          title: 'Draft a systems engineering objective.',
+          content: 'To prevent unwanted emergent behavior, we must...',
           availableWords: [
-            { id: 'w1', word: 'apply' },
-            { id: 'w2', word: 'buffer' },
-            { id: 'w3', word: 'inventory' },
-            { id: 'w4', word: 'between' },
-            { id: 'w5', word: 'workstations' },
-            { id: 'w6', word: 'bypass' },
-            { id: 'w7', word: 'scrap' }
+            { id: 'w1', word: 'analyze' },
+            { id: 'w2', word: 'subsystem' },
+            { id: 'w3', word: 'interactions' },
+            { id: 'w4', word: 'across' },
+            { id: 'w5', word: 'boundaries' },
+            { id: 'w6', word: 'ignore' },
+            { id: 'w7', word: 'paint' }
           ],
           correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
         },
         {
           id: 'step-match',
           type: 'match',
-          title: 'Pair the manufacturing concepts.',
+          title: 'Pair systems engineering concepts.',
           pairs: [
-            { leftId: 'l1', leftText: 'Takt Time', rightId: 'r1', rightText: 'Customer demand heartbeat' },
-            { leftId: 'l2', leftText: 'Cycle Time', rightId: 'r2', rightText: 'Actual station execution speed' },
-            { leftId: 'l3', leftText: 'Yamazumi Board', rightId: 'r3', rightText: 'Workload balancing tool' },
-            { leftId: 'l4', leftText: 'Bottleneck', rightId: 'r4', rightText: 'Slowest step in production' }
+            { leftId: 'l1', leftText: 'Emergent Property', rightId: 'r1', rightText: 'Behavior seen only at system level' },
+            { leftId: 'l2', leftText: 'Subsystem', rightId: 'r2', rightText: 'A self-contained component group' },
+            { leftId: 'l3', leftText: 'Boundary', rightId: 'r3', rightText: 'Defines what is in vs out of scope' },
+            { leftId: 'l4', leftText: 'Interface', rightId: 'r4', rightText: 'Connection point between modules' }
           ],
           leftOrder: ['l2', 'l4', 'l1', 'l3'],
           rightOrder: ['r3', 'r1', 'r4', 'r2']
         }
       ];
-    } else if (skill.id === 'ai-eval') {
+    } else if (skill.id === 'req-eng') {
       return [
         {
           id: 'step-1',
           type: 'intro',
-          title: `Empirical QA Systems & Evaluations`,
-          content: `Welcome back Adore! Let's examine numerical metrics checking bots' alignment to our master technical documentation. Let's elevate your mastery from ${assignment.currentScore}%.`,
+          title: `Robust Requirement Engineering`,
+          content: `Welcome back Adore! Let's practice bidirectional traceability and testable requirement authoring. Let's elevate your mastery from ${assignment.currentScore}%.`,
         },
         {
           id: 'step-concept-1',
           type: 'concept',
-          title: `Foundations: Evaluating Summarizations`,
+          title: `Foundations: Traceability and Elicitation`,
         },
         {
           id: 'step-sandbox',
           type: 'sandbox',
-          title: `Precision vs Recall evaluation simulator`,
+          title: `Requirements Traceability Evaluator`,
         },
         {
           id: 'step-quiz',
           type: 'quiz',
-          title: `Which metric should a specialist deploy to confirm a bot contains all facts from the manual?`,
+          title: `Which metric should a specialist deploy to confirm requirements are testable?`,
           options: [
-            { id: '1', text: 'BLEU scores, since precision blocks short sentences.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
-            { id: '2', text: 'ROUGE-L, as it optimizes recall to verify retained database knowledge.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
-            { id: '3', text: 'Entropy thresholds, to check repetition speeds.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+            { id: '1', text: 'The length and vocabulary complexity of the core requirement text.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'The presence of an objective, verifiable pass/fail condition.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '3', text: 'The total number of stakeholders who signed off on the document.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
           ]
         },
         {
           id: 'step-build',
           type: 'build',
-          title: 'Select valid evaluation pipelines.',
-          content: 'To verify system alignment securely during check gates, we...',
+          title: 'Draft requirement strategy.',
+          content: 'To prevent scope creep and untracked changes, we...',
+          availableWords: [
+            { id: 'w1', word: 'maintain' },
+            { id: 'w2', word: 'strict' },
+            { id: 'w3', word: 'bidirectional' },
+            { id: 'w4', word: 'traceability' },
+            { id: 'w5', word: 'matrices' },
+            { id: 'w6', word: 'ignore' },
+            { id: 'w7', word: 'verbal' }
+          ],
+          correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
+        },
+        {
+          id: 'step-match',
+          type: 'match',
+          title: 'Pair the requirement criteria.',
+          pairs: [
+            { leftId: 'l1', leftText: 'Atomic', rightId: 'r1', rightText: 'Expresses only one specific need' },
+            { leftId: 'l2', leftText: 'Traceable', rightId: 'r2', rightText: 'Maps upstream and downstream' },
+            { leftId: 'l3', leftText: 'Unambiguous', rightId: 'r3', rightText: 'Clear to all engineers' },
+            { leftId: 'l4', leftText: 'Verifiable', rightId: 'r4', rightText: 'Includes pass/fail conditions' }
+          ],
+          leftOrder: ['l2', 'l4', 'l1', 'l3'],
+          rightOrder: ['r3', 'r1', 'r4', 'r2']
+        }
+      ];
+    } else if (skill.id === 'tol-analysis') {
+      return [
+        {
+          id: 'step-1',
+          type: 'intro',
+          title: `Mastering Tolerance Analysis`,
+          content: `Welcome back Adore! Let's explore GD&T and statistical variance stack-ups. Elevate your mastery from ${assignment.currentScore}%.`,
+        },
+        {
+          id: 'step-concept-1',
+          type: 'concept',
+          title: `Foundations: RSS vs Worst-Case Stack-ups`,
+        },
+        {
+          id: 'step-sandbox',
+          type: 'sandbox',
+          title: `Tolerance Variance Simulator`,
+        },
+        {
+          id: 'step-quiz',
+          type: 'quiz',
+          title: `Why would an engineer choose RSS (Root Sum Square) over Worst-Case tolerance analysis?`,
+          options: [
+            { id: '1', text: 'RSS guarantees absolute zero defect rates in all physical component scenarios.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'RSS acknowledges manufacturing probabilities, allowing larger tolerances and reduced part cost.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '3', text: 'RSS relies entirely on maximum material condition constraints.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+          ]
+        },
+        {
+          id: 'step-build',
+          type: 'build',
+          title: 'Construct a statistical tolerance strategy.',
+          content: 'To lower part costs while ensuring reliable assembly fit, we...',
           availableWords: [
             { id: 'w1', word: 'calculate' },
-            { id: 'w2', word: 'empirical' },
-            { id: 'w3', word: 'recall' },
-            { id: 'w4', word: 'against' },
-            { id: 'w5', word: 'ground-truth' },
+            { id: 'w2', word: 'variations' },
+            { id: 'w3', word: 'using' },
+            { id: 'w4', word: 'statistical' },
+            { id: 'w5', word: 'distribution' },
+            { id: 'w6', word: 'ignoring' },
+            { id: 'w7', word: 'limits' }
+          ],
+          correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
+        },
+        {
+          id: 'step-match',
+          type: 'match',
+          title: 'Pair Tolerance dimensions.',
+          pairs: [
+            { leftId: 'l1', leftText: 'GD&T', rightId: 'r1', rightText: 'Geometric dimensioning framework' },
+            { leftId: 'l2', leftText: 'RSS', rightId: 'r2', rightText: 'Statistical probability model' },
+            { leftId: 'l3', leftText: 'Worst-Case', rightId: 'r3', rightText: 'Extreme boundary stacking' },
+            { leftId: 'l4', leftText: 'Clearance', rightId: 'r4', rightText: 'Gap between mating parts' }
+          ],
+          leftOrder: ['l2', 'l4', 'l1', 'l3'],
+          rightOrder: ['r3', 'r1', 'r4', 'r2']
+        }
+      ];
+    } else if (skill.id === 'cost-opt') {
+      return [
+        {
+          id: 'step-1',
+          type: 'intro',
+          title: `Value Engineering & Cost Optimization`,
+          content: `Let's inspect part consolidation routines and standardized value mapping. Boost your DFM mastery from ${assignment.currentScore}%.`,
+        },
+        {
+          id: 'step-concept-1',
+          type: 'concept',
+          title: `Foundations: Consolidation & Standardization`,
+        },
+        {
+          id: 'step-sandbox',
+          type: 'sandbox',
+          title: `Evaluate Component Value Streams`,
+        },
+        {
+          id: 'step-quiz',
+          type: 'quiz',
+          title: `What is the primary benefit of standardizing fasteners in a complex vehicle chassis assembly?`,
+          options: [
+            { id: '1', text: 'It radically reduces structural yield strength of the main chassis.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'It reduces tooling changeover time and simplifies the supply chain overhead.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '3', text: 'It improves aerodynamic drag coefficients automatically.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+          ]
+        },
+        {
+          id: 'step-build',
+          type: 'build',
+          title: 'Design an optimization protocol.',
+          content: 'To lower total manufacturing unit costs systematically, we...',
+          availableWords: [
+            { id: 'w1', word: 'consolidate' },
+            { id: 'w2', word: 'parts' },
+            { id: 'w3', word: 'and' },
+            { id: 'w4', word: 'standardize' },
+            { id: 'w5', word: 'fasteners' },
+            { id: 'w6', word: 'complicate' },
+            { id: 'w7', word: 'geometry' }
+          ],
+          correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
+        },
+        {
+          id: 'step-match',
+          type: 'match',
+          title: 'Pair Cost Optimization tools.',
+          pairs: [
+            { leftId: 'l1', leftText: 'Value Engineering', rightId: 'r1', rightText: 'Function vs Cost ratio' },
+            { leftId: 'l2', leftText: 'Consolidation', rightId: 'r2', rightText: 'Combining separate pieces' },
+            { leftId: 'l3', leftText: 'Standardization', rightId: 'r3', rightText: 'Reusing common parts' },
+            { leftId: 'l4', leftText: 'Overhead', rightId: 'r4', rightText: 'Indirect manufacturing costs' }
+          ],
+          leftOrder: ['l2', 'l4', 'l1', 'l3'],
+          rightOrder: ['r3', 'r1', 'r4', 'r2']
+        }
+      ];
+    } else if (skill.id === 'v-model') {
+      return [
+        {
+          id: 'step-1',
+          type: 'intro',
+          title: `V-Model Lifecycle Design`,
+          content: `Let's explore the V-Model left-side requirements downward flow and right-side validation upward flow. We'll increase your mastery from ${assignment.currentScore}%.`,
+        },
+        {
+          id: 'step-concept-1',
+          type: 'concept',
+          title: `Foundations: Left vs Right Side`,
+        },
+        {
+          id: 'step-sandbox',
+          type: 'sandbox',
+          title: `Integration Simulation Framework`,
+        },
+        {
+          id: 'step-quiz',
+          type: 'quiz',
+          title: `What does the right side of the V-Model predominantly represent?`,
+          options: [
+            { id: '1', text: 'Decomposition of abstract requirements.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'Integration of hardware/software and their subsequent validation.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '3', text: 'Financial budgeting and parts procurement.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+          ]
+        },
+        {
+          id: 'step-build',
+          type: 'build',
+          title: 'Draft a lifecycle process statement.',
+          content: 'To successfully complete an automotive V-Model, we...',
+          availableWords: [
+            { id: 'w1', word: 'integrate' },
+            { id: 'w2', word: 'components' },
+            { id: 'w3', word: 'and' },
+            { id: 'w4', word: 'validate' },
+            { id: 'w5', word: 'behavior' },
             { id: 'w6', word: 'ignore' },
-            { id: 'w7', word: 'metrics' }
+            { id: 'w7', word: 'marketing' }
           ],
           correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
         },
         {
           id: 'step-match',
           type: 'match',
-          title: 'Pair the valuation criteria.',
+          title: 'Pair V-Model stages.',
           pairs: [
-            { leftId: 'l1', leftText: 'BLEU Score', rightId: 'r1', rightText: 'Measures precision criteria' },
-            { leftId: 'l2', leftText: 'ROUGE Score', rightId: 'r2', rightText: 'Focuses on retrieval recall' },
-            { leftId: 'l3', leftText: 'Ground Truth', rightId: 'r3', rightText: 'Gold-standard reference' },
-            { leftId: 'l4', leftText: 'Telemetry', rightId: 'r4', rightText: 'Active logs tracking index' }
+            { leftId: 'l1', leftText: 'System Design', rightId: 'r1', rightText: 'System Testing' },
+            { leftId: 'l2', leftText: 'Architecture Design', rightId: 'r2', rightText: 'Integration Testing' },
+            { leftId: 'l3', leftText: 'Detailed Design', rightId: 'r3', rightText: 'Unit Testing' },
+            { leftId: 'l4', leftText: 'Requirements Analysis', rightId: 'r4', rightText: 'Acceptance Testing' }
           ],
           leftOrder: ['l2', 'l4', 'l1', 'l3'],
           rightOrder: ['r3', 'r1', 'r4', 'r2']
         }
       ];
-    } else if (skill.id === 'threat-mod') {
+    } else if (skill.id === 'verify-val') {
       return [
         {
           id: 'step-1',
           type: 'intro',
-          title: `Threat Modeling & Architectural Audit`,
-          content: `Let's deep dive into STRIDE guidelines. Let's increase your risk mitigation mastery from ${assignment.currentScore}%.`,
+          title: `Verification and Validation`,
+          content: `Let's distinguish between building the system right against building the right system. Boost your validation mastery from ${assignment.currentScore}%.`,
         },
         {
           id: 'step-concept-1',
           type: 'concept',
-          title: `Foundations: STRIDE Vulnerabilities`,
+          title: `Foundations: Verification vs Validation`,
         },
         {
           id: 'step-sandbox',
           type: 'sandbox',
-          title: `Audit threat vulnerabilities on flow routes`,
+          title: `Hardware-in-the-Loop Simulator`,
         },
         {
           id: 'step-quiz',
           type: 'quiz',
-          title: `An attacker alters static Git commit histories. Under STRIDE, what is this classification?`,
+          title: `Which statement accurately describes Validation?`,
           options: [
-            { id: '1', text: 'Repudiation, because history tracks anonymous markers.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
-            { id: '2', text: 'Tampering, because they modify critical records without authorization.', icon: <Shield className="w-10 h-10 mb-2 text-indigo-500" />, isCorrect: true },
-            { id: '3', text: 'Information disclosure, as history is viewable.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+            { id: '1', text: 'Checking if source lines of code conform to formatting standards.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '2', text: 'Ensuring the implemented product satisfies the actual customer needs.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '3', text: 'Automating unit test compilation pipelines.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
           ]
         },
         {
           id: 'step-build',
           type: 'build',
-          title: 'Construct target mitigation policies.',
-          content: 'To isolate critical container gates against cluster breaches, we...',
+          title: 'Design a validation checkpoint.',
+          content: 'To prove a component operates safely in reality, we...',
           availableWords: [
-            { id: 'w1', word: 'strip' },
-            { id: 'w2', word: 'root' },
-            { id: 'w3', word: 'permissions' },
-            { id: 'w4', word: 'during' },
-            { id: 'w5', word: 'compilation' },
-            { id: 'w6', word: 'allow' },
-            { id: 'w7', word: 'keys' }
+            { id: 'w1', word: 'perform' },
+            { id: 'w2', word: 'hardware' },
+            { id: 'w3', word: 'in' },
+            { id: 'w4', word: 'the' },
+            { id: 'w5', word: 'loop' },
+            { id: 'w6', word: 'skip' },
+            { id: 'w7', word: 'testing' }
           ],
           correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
         },
         {
           id: 'step-match',
           type: 'match',
-          title: 'Pair STRIDE threat categories.',
+          title: 'Pair V&V environments.',
           pairs: [
-            { leftId: 'l1', leftText: 'Spoofing', rightId: 'r1', rightText: 'Impersonating identities' },
-            { leftId: 'l2', leftText: 'Tampering', rightId: 'r2', rightText: 'Altering database states' },
-            { leftId: 'l3', leftText: 'Repudiation', rightId: 'r3', rightText: 'Erasing audit traces' },
-            { leftId: 'l4', leftText: 'Denial of Service', rightId: 'r4', rightText: 'Overloading server queues' }
+            { leftId: 'l1', leftText: 'MIL', rightId: 'r1', rightText: 'Model-in-the-Loop' },
+            { leftId: 'l2', leftText: 'SIL', rightId: 'r2', rightText: 'Software-in-the-Loop' },
+            { leftId: 'l3', leftText: 'HIL', rightId: 'r3', rightText: 'Hardware-in-the-Loop' },
+            { leftId: 'l4', leftText: 'VIL', rightId: 'r4', rightText: 'Vehicle-in-the-Loop' }
           ],
           leftOrder: ['l2', 'l4', 'l1', 'l3'],
           rightOrder: ['r3', 'r1', 'r4', 'r2']
         }
       ];
-    } else if (skill.id === 'devsecops-pipeline') {
+    } else if (skill.id === 'mat-selection') {
       return [
         {
           id: 'step-1',
           type: 'intro',
-          title: `Continuous DevSecOps Security Gates`,
-          content: `Let's inspect SAST scanners and dependency composite composition (SCA). Boost your pipeline security mastery from ${assignment.currentScore}%.`,
+          title: `Material Selection Trade-offs`,
+          content: `Let's optimize structural integrity while lowering weight and evaluating costs. Elevate your DFM mastery from ${assignment.currentScore}%.`,
         },
         {
           id: 'step-concept-1',
           type: 'concept',
-          title: `Foundations: SAST versus SCA Gates`,
+          title: `Foundations: Finding the Balance`,
         },
         {
           id: 'step-sandbox',
           type: 'sandbox',
-          title: `Evaluate code directories with SAST & SCA`,
+          title: `Cost-Weight Optimization Sandbox`,
         },
         {
           id: 'step-quiz',
           type: 'quiz',
-          title: `What is the primary difference between a SAST scan and an SCA scan?`,
+          title: `Why might a high-volume manufacturer choose stamped aluminum over carbon fiber despite carbon fiber's strength?`,
           options: [
-            { id: '1', text: 'SAST scans written custom files; SCA scans imported libraries.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
-            { id: '2', text: 'SAST checks networks; SCA compiles binaries.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
-            { id: '3', text: 'SAST requires managers; SCA is fully manual.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
+            { id: '1', text: 'Aluminum provides much lower cost and faster manufacturing cycles.', icon: <CheckCircle2 className="w-10 h-10 mb-2 text-emerald-500" />, isCorrect: true },
+            { id: '2', text: 'Carbon fiber has zero tensile strength memory.', icon: <AlertCircle className="w-10 h-10 mb-2 text-slate-400" /> },
+            { id: '3', text: 'Aluminum never yields under sheer load conditions.', icon: <Rocket className="w-10 h-10 mb-2 text-rose-500" /> },
           ]
         },
         {
           id: 'step-build',
           type: 'build',
-          title: 'Design automatic CI scanner checks.',
-          content: 'To prevent CVE vulnerabilities during third-party dependency imports, we...',
+          title: 'Design a material selection constraint.',
+          content: 'To prevent excess mass while keeping costs low, we...',
           availableWords: [
-            { id: 'w1', word: 'reject' },
-            { id: 'w2', word: 'outdated' },
-            { id: 'w3', word: 'composite' },
-            { id: 'w4', word: 'dependency' },
-            { id: 'w5', word: 'packages' },
-            { id: 'w6', word: 'grant' },
-            { id: 'w7', word: 'bypasses' }
+            { id: 'w1', word: 'balance' },
+            { id: 'w2', word: 'yield' },
+            { id: 'w3', word: 'strength' },
+            { id: 'w4', word: 'against' },
+            { id: 'w5', word: 'density' },
+            { id: 'w6', word: 'ignore' },
+            { id: 'w7', word: 'color' }
           ],
           correctOrder: ['w1', 'w2', 'w3', 'w4', 'w5']
         },
         {
           id: 'step-match',
           type: 'match',
-          title: 'Pair automation gate concepts.',
+          title: 'Pair Material attributes.',
           pairs: [
-            { leftId: 'l1', leftText: 'SAST Scan', rightId: 'r1', rightText: 'Inspects key code strings' },
-            { leftId: 'l2', leftText: 'SCA Scan', rightId: 'r2', rightText: 'Audits imported libraries' },
-            { leftId: 'l3', leftText: 'CVE Record', rightId: 'r3', rightText: 'National vulnerability tag' },
-            { leftId: 'l4', leftText: 'Git Actions', rightId: 'r4', rightText: 'Runs workflows automatically' }
+            { leftId: 'l1', leftText: 'Yield Strength', rightId: 'r1', rightText: 'Deformation threshold' },
+            { leftId: 'l2', leftText: 'Density', rightId: 'r2', rightText: 'Mass per unit volume' },
+            { leftId: 'l3', leftText: 'Fatigue Limit', rightId: 'r3', rightText: 'Cyclic failure tolerance' },
+            { leftId: 'l4', leftText: 'Brittle', rightId: 'r4', rightText: 'Breaks without stretching' }
           ],
           leftOrder: ['l2', 'l4', 'l1', 'l3'],
           rightOrder: ['r3', 'r1', 'r4', 'r2']
@@ -531,18 +705,18 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                       </div>
                     )}
 
-                    {step.type === 'concept' && (
+                     {step.type === 'concept' && (
                        <div className="w-full max-w-3xl mx-auto space-y-6">
-                         {skill.id === 'cycle-time-opt' && (
+                         {skill.id === 'sys-think' && (
                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                              <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
                                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
                                  1
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">Takt Time Calculation</h3>
-                               <p className="text-xs text-slate-450 font-mono">Customer Demand Rate</p>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Define Boundaries</h3>
+                               <p className="text-xs text-slate-450 font-mono">System Scope</p>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 The heartbeat of the production system. It dictates the exact speed at which we must manufacture to satisfy customer shipment requirements without overflowing the warehouse.
+                                 Determine what is inside your system and what is part of the environment. A clear boundary prevents feature creep and clarifies expected inputs/outputs.
                                </p>
                              </div>
 
@@ -550,36 +724,36 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                                <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
                                  2
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">Cycle Time Limits</h3>
-                               <p className="text-xs text-slate-450 font-mono">Actual Process Time</p>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Analyze Interactions</h3>
+                               <p className="text-xs text-slate-450 font-mono">Interfaces</p>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 The exact duration it takes a cell, human, or robot to finish one complete operational cycle. If cycle time exceeds takt time, we fail customer schedules.
+                                 Identify how sub-components communicate (mechanical load, thermal transfer, data signals). Poorly managed interfaces are the source of most system failures.
                                </p>
                              </div>
 
                              <div className="col-span-1 md:col-span-2 bg-indigo-50/40 border border-indigo-200 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
                                <div className="space-y-1 text-left">
-                                 <h4 className="text-sm font-bold text-indigo-900 uppercase font-mono tracking-wider">The Yamazumi Strategy</h4>
+                                 <h4 className="text-sm font-bold text-indigo-900 uppercase font-mono tracking-wider">Emergent Properties Map</h4>
                                  <p className="text-xs sm:text-sm text-indigo-700 leading-relaxed">
-                                   Balance workloads effectively by stacking cycle times and ensuring no single station exceeds the calculated Takt Time threshold.
+                                   Trace desired system features back to the required interactions of individual subsystems.
                                  </p>
                                </div>
                                <span className="px-4 py-1.5 bg-indigo-950 text-white rounded-full text-[10px] uppercase font-bold font-mono tracking-wider shrink-0">
-                                 Recommended Strategy
+                                 Core Methodology
                                </span>
                              </div>
                            </div>
                          )}
 
-                         {skill.id === 'ai-eval' && (
+                         {skill.id === 'req-eng' && (
                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                              <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
                                <div className="w-10 h-10 rounded-xl bg-zinc-105 text-slate-800 border border-zinc-200 flex items-center justify-center">
                                  <Sparkles className="w-5 h-5 text-indigo-500" />
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">BLEU Rate (Precision)</h3>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Verifiable Statements</h3>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 Audits token exact matches from predicted candidate string back to reference targets. Restricts model verbosity, preventing bot noise.
+                                 A core requirement must be objective. Words like "fast," "good," or "reliable" are ambiguous. Use quantifiable metrics with clear tolerances.
                                </p>
                              </div>
 
@@ -587,29 +761,27 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center">
                                  <Check className="w-5 h-5" />
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">ROUGE-L Score (Recall)</h3>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Bidirectional Traceability</h3>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 Verifies how much of our ground-truth reference survived the generation. Crucial for verifying compliance thresholds (Enterprise standard: min 0.72).
+                                 Every stakeholder rule maps down to a specific system blueprint, and every system blueprint maps up to a stakeholder rule. No orphaned code.
                                </p>
                              </div>
 
                              <div className="col-span-1 md:col-span-2 bg-slate-50 border border-zinc-200 rounded-2xl p-6 font-mono text-xs text-slate-500 leading-relaxed">
                                <span className="font-bold text-slate-900 block mb-1">EVALUATION CONSTRAINTS</span>
-                               Continuous automated scoring replaces slow manual reviews. We check precision and recall values dynamically at compilation time.
+                               Continuous automated requirement parsing ensures all logic statements carry testable boundaries before the design phase begins.
                              </div>
                            </div>
                          )}
 
-                         {skill.id === 'threat-mod' && (
+                         {skill.id === 'tol-analysis' && (
                            <div className="space-y-6">
-                             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-left">
+                             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 text-left">
                                {[
-                                 { title: "S - Spoofing", desc: "Forging credential keys to hijack trusted roles.", css: "border-rose-100 bg-rose-50/25 text-rose-800" },
-                                 { title: "T - Tampering", desc: "Altering configuration registries or commit directories.", css: "border-amber-100 bg-amber-50/25 text-amber-800" },
-                                 { title: "R - Repudiation", desc: "Erasing administrative trace trails from ledger tables.", css: "border-emerald-100 bg-emerald-50/25 text-emerald-800" },
-                                 { title: "I - Info Leak", desc: "Exposing secure credentials inside application calls.", css: "border-indigo-100 bg-indigo-50/25 text-indigo-800" },
-                                 { title: "D - DoS Flood", desc: "Flooding network boundaries to cause node timeout faults.", css: "border-slate-205 bg-slate-50 text-slate-800" },
-                                 { title: "E - Privilege", desc: "Acquiring elevated command root clearances illegally.", css: "border-violet-100 bg-violet-50/25 text-violet-800" }
+                                 { title: "Worst-Case", desc: "All parts at extreme limits. Most expensive to manufacture.", css: "border-rose-100 bg-rose-50/25 text-rose-800" },
+                                 { title: "RSS Stack-up", desc: "Statistical distribution. High yield, lower cost.", css: "border-emerald-100 bg-emerald-50/25 text-emerald-800" },
+                                 { title: "GD&T Format", desc: "Standard geometric symbols controlling part envelope.", css: "border-indigo-100 bg-indigo-50/25 text-indigo-800" },
+                                 { title: "Clearance Fit", desc: "Guaranteed space between mating parts.", css: "border-amber-100 bg-amber-50/25 text-amber-800" }
                                ].map((entry, idx) => (
                                  <div key={idx} className={`p-5 border duration-350 hover:scale-[1.01] rounded-2xl flex flex-col justify-between ${entry.css}`}>
                                    <strong className="text-xs uppercase font-mono tracking-tight">{entry.title}</strong>
@@ -618,43 +790,112 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                                ))}
                              </div>
                              <p className="text-xs text-slate-450 leading-normal text-center bg-slate-50 border border-zinc-150 rounded-xl p-4 font-mono">
-                               STRIDE acts as our blueprint map ensuring our secure containers check gates block all vectors.
+                               RSS limits ensure affordable tolerancing without sacrificing physical assembly yield.
                              </p>
                            </div>
                          )}
 
-                         {skill.id === 'devsecops-pipeline' && (
+                         {skill.id === 'cost-opt' && (
                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                              <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4 font-sans">
                                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-mono font-bold text-xs">
-                                 SAST
+                                 CON
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">Static Scanner Rules</h3>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Part Consolidation</h3>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 Audits direct written files (e.g. typescript, python strings) inside repo commits. Proactively highlights credentials leak or poor routing hooks.
+                                 Evaluating joined assemblies to see if they can be manufactured as a single die-cast or injection-molded unit, eliminating fastener costs entirely.
                                </p>
                              </div>
 
                              <div className="bg-white border-2 border-zinc-202/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4 font-sans">
                                <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-xs">
-                                 SCA
+                                 STD
                                </div>
-                               <h3 className="text-xl font-display font-medium text-slate-900">Composition Scanner Rules</h3>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Component Standardization</h3>
                                <p className="text-sm text-slate-500 leading-relaxed">
-                                 Inspects external package dependencies. References national databases in real-time to prevent outdated libraries with CVE records.
+                                 Reusing the exact same bolts, clips, and brackets across the vehicle to simplify supply chain tracking and reduce assembly station complexity.
                                </p>
                              </div>
 
                              <div className="col-span-1 md:col-span-2 bg-emerald-50/40 border border-emerald-150 rounded-2xl p-5 flex items-center gap-4 text-emerald-850 text-sm">
                                <ShieldCheck className="w-6 h-6 text-emerald-600 shrink-0" />
                                <p className="leading-relaxed font-sans">
-                                 Combining standard SAST strings scanning with systematic SCA dependency audits ensures absolute mitigation across codebases.
+                                 Systematic value engineering reduces overall overhead while retaining core functional requirements.
                                </p>
                              </div>
                            </div>
                          )}
 
-                         {skill.id !== 'cycle-time-opt' && skill.id !== 'ai-eval' && skill.id !== 'threat-mod' && skill.id !== 'devsecops-pipeline' && (
+                         {skill.id === 'v-model' && (
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                             <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
+                               <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-lg">
+                                 L
+                               </div>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Left Side</h3>
+                               <p className="text-sm text-slate-500 leading-relaxed">
+                                 Decomposition of requirements: from abstract stakeholder needs down to detailed software and hardware design specifications.
+                               </p>
+                             </div>
+                             <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
+                               <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold text-lg">
+                                 R
+                               </div>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Right Side</h3>
+                               <p className="text-sm text-slate-500 leading-relaxed">
+                                 Integration and validation: executing unit testing, system-level testing, and final vehicle acceptance testing against left-side specifications.
+                               </p>
+                             </div>
+                           </div>
+                         )}
+
+                         {skill.id === 'verify-val' && (
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                             <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
+                               <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center font-mono font-bold text-xs">
+                                 VERIFY
+                               </div>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Verification</h3>
+                               <p className="text-sm text-slate-500 leading-relaxed">
+                                 "Are we building the product right?" Testing individual components to ensure they meet their specified design documents and engineering rules.
+                               </p>
+                             </div>
+                             <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4">
+                               <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-mono font-bold text-xs">
+                                 VALID
+                               </div>
+                               <h3 className="text-xl font-display font-medium text-slate-900">Validation</h3>
+                               <p className="text-sm text-slate-500 leading-relaxed">
+                                 "Are we building the right product?" Confirming the final integrated vehicle performs as expected in real-world environments for the customer.
+                               </p>
+                             </div>
+                           </div>
+                         )}
+
+                         {skill.id === 'mat-selection' && (
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                             <div className="bg-white border-2 border-zinc-200/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4 font-sans">
+                               <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-mono font-bold text-xs">
+                                 ALU
+                               </div>
+                               <h3 className="text-xl font-display font-medium text-slate-900">High Volume</h3>
+                               <p className="text-sm text-slate-500 leading-relaxed">
+                                 Stamping aluminum offers a perfect balance of decent yield strength and rapid manufacturing processing time at lower unit cost.
+                               </p>
+                             </div>
+                             <div className="bg-white border-2 border-zinc-202/80 rounded-[2rem] p-6 md:p-8 shadow-xs space-y-4 font-sans">
+                               <div className="w-10 h-10 rounded-xl bg-slate-800 text-slate-100 flex items-center justify-center font-mono font-bold text-xs">
+                                 CFRP
+                               </div>
+                               <h3 className="text-xl font-display font-medium text-slate-900">High Performance</h3>
+                               <p className="text-sm text-slate-500 leading-relaxed">
+                                 Carbon fiber provides unmatched ultimate tensile and extreme low mass, but introduces a costly, slow-curing manufacturing cycle.
+                               </p>
+                             </div>
+                           </div>
+                         )}
+
+                         {skill.id !== 'sys-think' && skill.id !== 'req-eng' && skill.id !== 'tol-analysis' && skill.id !== 'cost-opt' && skill.id !== 'v-model' && skill.id !== 'verify-val' && skill.id !== 'mat-selection' && (
                            <div className="bg-white border-2 border-zinc-200/80 rounded-3xl p-8 shadow-sm text-left space-y-5">
                              <h4 className="text-lg font-bold text-slate-900">Core Principles of {skill.title}</h4>
                              <p className="text-sm text-slate-600 leading-relaxed">
@@ -668,14 +909,17 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                        </div>
                     )}
 
-                    {step.type === 'sandbox' && (
+                     {step.type === 'sandbox' && (
                        <div className="w-full">
-                         {skill.id === 'cycle-time-opt' && <RagSandbox onComplete={goNext} />}
-                         {skill.id === 'ai-eval' && <AiEvalSandbox onComplete={goNext} />}
-                         {skill.id === 'threat-mod' && <ThreatModSandbox onComplete={goNext} />}
-                         {skill.id === 'devsecops-pipeline' && <DevSecOpsSandbox onComplete={goNext} />}
+                         {skill.id === 'sys-think' && <RagSandbox onComplete={goNext} />}
+                         {skill.id === 'req-eng' && <AiEvalSandbox onComplete={goNext} />}
+                         {skill.id === 'tol-analysis' && <ThreatModSandbox onComplete={goNext} />}
+                         {skill.id === 'cost-opt' && <DevSecOpsSandbox onComplete={goNext} />}
+                         {skill.id === 'v-model' && <RagSandbox onComplete={goNext} />}
+                         {skill.id === 'verify-val' && <DevSecOpsSandbox onComplete={goNext} />}
+                         {skill.id === 'mat-selection' && <ThreatModSandbox onComplete={goNext} />}
                          
-                         {skill.id !== 'cycle-time-opt' && skill.id !== 'ai-eval' && skill.id !== 'threat-mod' && skill.id !== 'devsecops-pipeline' && (
+                         {!['sys-think', 'req-eng', 'tol-analysis', 'cost-opt', 'v-model', 'verify-val', 'mat-selection'].includes(skill.id) && (
                            <div className="bg-white border rounded-2xl p-6 shadow-sm max-w-xl mx-auto">
                               <h4 className="text-md font-bold mb-4">Fallback Playgrounds Sandbox</h4>
                               <p className="text-sm text-slate-500 mb-6">Explore compliance parameters dynamically.</p>

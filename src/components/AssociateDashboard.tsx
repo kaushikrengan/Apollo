@@ -35,98 +35,170 @@ export interface TrainingCourse {
 }
 
 const STATIC_COURSES_DATA: Record<string, TrainingCourse> = {
-  'cycle-time-opt': {
-    skillId: 'cycle-time-opt',
-    skillName: 'Cycle Time Optimization',
-    category: 'Core Manufacturing',
-    description: 'Master time & motion studies, calculate tact time accurately, and balance assembly cell load metrics.',
+  'sys-think': {
+    skillId: 'sys-think',
+    skillName: 'Systems Thinking',
+    category: 'Systems Engineering',
+    description: 'Master analyzing the interactions between subsystems, electronic control units, and mechanical linkages.',
     modules: [
       {
-        id: 'rag-m1',
-        title: 'Takt Time vs. Cycle Time metrics',
-        category: 'Process Engineering',
-        narrative: "In lean production environments, understanding the cadence of line throughput is critical.\n\nOptimizing shop floor throughput requires calculating limits:\n- **Takt Time** is the rate at which you need to complete a product to meet customer demand.\n- **Cycle Time** is the actual time it takes to complete one step of the assembly process.\n\nMatching Cycle Time to Takt Time ensures that your production line avoids overproduction while completely satisfying schedule targets.",
+        id: 'sys-m1',
+        title: 'System Boundaries and Interactions',
+        category: 'Core Theory',
+        narrative: "When addressing complex automotive systems, defining the boundary is critical. We must understand how the braking system interacts with the suspension and powertrain.\n\nSystems thinking helps us predict emergent properties that single components do not exhibit alone.",
         quiz: {
-          question: "When optimizing an assembly line, why do engineers prioritize matching Cycle Time with Takt Time?",
+          question: "Which of the following is an example of an emergent property in automotive systems?",
           options: [
-            "To maximize robot operational speed regardless of shipping demand.",
-            "To prevent overproduction bottlenecks while ensuring customer delivery schedules are met.",
-            "To decrease the computational load on the inventory tracking sensors."
+            "The weight of a single brake pad.",
+            "Vehicle stopping distance under wet conditions.",
+            "The color of the exterior paint."
           ],
           correctIndex: 1,
-          explanation: "Synchronizing these times prevents inventory build-up (overproduction) while hitting your guaranteed delivery SLAs."
+          explanation: "Stopping distance depends on the interaction between tires, brakes, suspension, and vehicle weight—an emergent property."
         }
       }
     ]
   },
-  'ai-eval': {
-    skillId: 'ai-eval',
-    skillName: 'Value Stream Mapping',
-    category: 'Process Engineering',
-    description: 'Implement rigorous process flow charting to eliminate non-value added steps.',
+  'req-eng': {
+    skillId: 'req-eng',
+    skillName: 'Requirement Engineering',
+    category: 'Systems Engineering',
+    description: 'Implement rigorous documentation and traceability of stakeholder and system requirements.',
     modules: [
       {
-        id: 'eval-m1',
-        title: 'Non-Value Added Time (NVA)',
+        id: 'req-m1',
+        title: 'Traceability and Elicitation',
         category: 'Core Theory',
-        narrative: "How do we identify waste in a complex manufacturing line? We employ Value Stream Mapping:\n\n- **Value Added (VA):** Any step the customer is willing to pay for.\n- **Non-Value Added (NVA):** Steps that add no value but may be required (e.g. inspections).\n\nA typical target threshold for lean compliance requires reducing pure NVA (waste) by 15% per fiscal quarter.",
+        narrative: "Good requirements are atomic, unambiguous, and testable. Traceability ensures every stakeholder need has a matching system requirement, and every system requirement has a test case.\n\nA typical target threshold for compliance is 100% bidirectional traceability.",
         quiz: {
-          question: "Which metric should a specialist deploy to confirm an assembly step adds value?",
+          question: "Which metric should a specialist deploy to confirm requirements are testable?",
           options: [
-            "Wait times, since precision checks keep inventory lean.",
-            "Customer willingness to pay for the transformation taking place.",
-            "Material transport metrics, to ensure parts are moving."
+            "The length of the requirement text.",
+            "The presence of a verifiable pass/fail condition.",
+            "How many engineers reviewed it."
           ],
           correctIndex: 1,
-          explanation: "Value-added steps fundamentally transform the product in a way the end-customer cares about and pays for."
+          explanation: "A requirement is only testable if it has clear, objective pass/fail criteria."
         }
       }
     ]
   },
-  'threat-mod': {
-    skillId: 'threat-mod',
-    skillName: 'FMEA Risk Modeling',
-    category: 'Quality Assurance',
-    description: 'Apply standardized methodologies to product failures, and audit mitigation logs.',
+  'tol-analysis': {
+    skillId: 'tol-analysis',
+    skillName: 'Tolerance Analysis',
+    category: 'Design for Manufacturability',
+    description: 'Apply statistical variance modeling and stack-ups to ensure manufacturability.',
     modules: [
       {
-        id: 'threat-m1',
-        title: 'RPN (Risk Priority Number)',
+        id: 'tol-m1',
+        title: 'Statistical vs Worst-Case Stack-ups',
         category: 'Core Theory',
-        narrative: "The Failure Mode and Effects Analysis (FMEA) identifies risks:\n\n- Severity: How bad is the impact?\n- Occurrence: How often does the failure happen?\n- Detection: Can we catch it before it ships?\n\nMultiplying these gives the Risk Priority Number (RPN).",
+        narrative: "Geometric dimensioning and tolerancing (GD&T) defines the allowed variation. \n\n- Worst-Case: Assumes all parts are at their extreme limits.\n- Root Sum Square (RSS): Statistical approach assuming normal distribution of sizes.\n\nUsing RSS allows for looser individual tolerances while still meeting assembly requirements.",
         quiz: {
-          question: "An engineer adds a vision camera to automatically catch defects. Which FMEA score decreases?",
+          question: "Why would an engineer choose RSS over Worst-Case tolerance analysis?",
           options: [
-            "Severity, because the defect is no longer dangerous.",
-            "Detection score, because we are more likely to catch it.",
-            "Occurrence, because the machine is fixed."
+            "RSS guarantees zero defects in all scenarios.",
+            "RSS allows for larger manufacturing tolerances, reducing cost.",
+            "RSS only works for plastic components."
           ],
           correctIndex: 1,
-          explanation: "Adding inspections or sensors improves detection, which lowers the Detection multiplier and overall RPN."
+          explanation: "RSS acknowledges that it's highly improbable for all parts to be at their extreme worst-case simultaneously, allowing cheaper, looser tolerances."
         }
       }
     ]
   },
-  'devsecops-pipeline': {
-    skillId: 'devsecops-pipeline',
-    skillName: 'SPC Automation Gates',
-    category: 'Quality Assurance',
-    description: 'Embed automated statistical controls and sensor stages into production lines.',
+  'cost-opt': {
+    skillId: 'cost-opt',
+    skillName: 'Cost Optimization',
+    category: 'Design for Manufacturability',
+    description: 'Embed value engineering practices to reduce manufacturing steps and lower unit costs.',
     modules: [
       {
-        id: 'devsec-m1',
-        title: 'UCL and LCL (Control Limits)',
+        id: 'cost-m1',
+        title: 'Value Engineering and Part Consolidation',
         category: 'Core Theory',
-        narrative: "SPC automation monitors quality telemetry. We use two main checking layers:\n- Upper Control Limit (UCL): The highest allowed variation before the process breaks.\n- Lower Control Limit (LCL): The lowest allowed variation.\n\nAdding these auto-stopping gates inside the PLC code prevents defective parts from moving to the next workstation.",
+        narrative: "Cost optimization involves looking at the function of a part and finding the most economical way to achieve it.\n- Part Consolidation: Combining multiple parts into one molded or cast piece.\n- Standardizing Fasteners: Using the same bolt sizes across the assembly.\n\nReducing part count reduces assembly time and supply chain overhead.",
         quiz: {
-          question: "What is the primary difference between a specification limit and a control limit?",
+          question: "What is the primary benefit of standardizing fasteners in an assembly?",
           options: [
-            "Control limits reflect actual process behavior; specification limits are customer requirements.",
-            "Specification limits apply to software; control limits apply to hardware.",
-            "Control limits require human audits; specification limits are strictly automated."
+            "Reduces the number of tools required on the assembly line.",
+            "Increases the top speed of the vehicle.",
+            "Improves the aerodynamic drag coefficient."
           ],
           correctIndex: 0,
-          explanation: "Control limits are calculated from normal statistical variation of the physical machines, while specification limits are set by engineering blueprints/customers."
+          explanation: "Fewer unique fasteners means operators need fewer tools and spend less time switching between them, lowering assembly costs."
+        }
+      }
+    ]
+  },
+  'v-model': {
+    skillId: 'v-model',
+    skillName: 'V Model Development',
+    category: 'Systems Engineering',
+    description: 'Learn the principles of V Model lifecycle integration from concept to validation.',
+    modules: [
+      {
+        id: 'v-m1',
+        title: 'V-Model Lifecycle',
+        category: 'Core Theory',
+        narrative: "The V-Model represents a software development process whose steps can be considered an extension of the waterfall model. Instead of moving down in a linear way, the process steps are bent upwards after the coding phase, to form the typical V shape.\n\nThe left side represents the decomposition of requirements, and the right side represents integration of parts and their validation.",
+        quiz: {
+          question: "What does the right side of the V-Model represent?",
+          options: [
+            "Decomposition of requirements.",
+            "Integration and validation of system components.",
+            "Coding and rapid prototyping."
+          ],
+          correctIndex: 1,
+          explanation: "The right side of the V-Model focuses on integration and validation tasks, checking the built product against the design."
+        }
+      }
+    ]
+  },
+  'verify-val': {
+    skillId: 'verify-val',
+    skillName: 'Verification and validation',
+    category: 'Systems Engineering',
+    description: 'Master the execution of unit tests, HIL simulations, and final validation workflows.',
+    modules: [
+      {
+        id: 'vv-m1',
+        title: 'Verification vs Validation',
+        category: 'Core Theory',
+        narrative: "While often used interchangeably, verification and validation mean different things in automotive systems engineering.\n\n- Verification: 'Are we building the product right?' Checks if the system meets specified requirements.\n- Validation: 'Are we building the right product?' Checks if the system meets stakeholder expectations.",
+        quiz: {
+          question: "Which of the following describes Validation?",
+          options: [
+            "Checking if the software code follows linting rules.",
+            "Ensuring the final product satisfies the customer's actual needs.",
+            "Verifying that a low-level software requirement was tested."
+          ],
+          correctIndex: 1,
+          explanation: "Validation ensures that the system solves the correct problem and satisfies stakeholder intended use."
+        }
+      }
+    ]
+  },
+  'mat-selection': {
+    skillId: 'mat-selection',
+    skillName: 'Material Selection',
+    category: 'Design for Manufacturability',
+    description: 'Evaluate material properties to optimize weight reduction and manufacturability.',
+    modules: [
+      {
+        id: 'mat-m1',
+        title: 'Material Trade-offs',
+        category: 'Core Theory',
+        narrative: "Material selection involves finding the balance between weight, cost, yield strength, and manufacturability.\n\nFor example, while carbon fiber provides an excellent strength-to-weight ratio, its processing time and cost are much higher than stamped steel or aluminum. Selecting the right material is essential for minimizing mass without sacrificing structural integrity.",
+        quiz: {
+          question: "Why might an engineer select aluminum over carbon fiber for a medium-volume vehicle component?",
+          options: [
+            "Aluminum has a higher ultimate tensile strength than carbon fiber.",
+            "Aluminum represents a much lower cost and faster manufacturing cycle time.",
+            "Carbon fiber rusts when exposed to salt."
+          ],
+          correctIndex: 1,
+          explanation: "Aluminum is significantly cheaper and easier to manufacture in volume compared to carbon fiber, despite carbon fiber's better strength-to-weight characteristics."
         }
       }
     ]
