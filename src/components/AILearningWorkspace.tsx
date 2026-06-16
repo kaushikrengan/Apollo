@@ -696,9 +696,9 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                             
                             if (status === 'idle') {
                               if (isSelected) {
-                                 btnClasses += "border-slate-900 bg-slate-50 text-slate-950 border-b-slate-900 translate-y-[2px]";
+                                 btnClasses += "border-slate-900 bg-slate-50 text-slate-950 border-b-slate-900 translate-y-[2px] scale-[0.99] shadow-xs";
                               } else {
-                                 btnClasses += "border-zinc-200/80 bg-white text-slate-705 hover:bg-slate-50 border-b-zinc-300 hover:border-b-zinc-305 active:translate-y-[1px]";
+                                 btnClasses += "border-zinc-200/80 bg-white text-slate-705 hover:bg-slate-50 hover:border-slate-900 hover:scale-[1.015] hover:shadow-md border-b-zinc-300 hover:border-b-slate-900 active:translate-y-[1px] active:scale-99";
                               }
                             } else {
                               if (showCorrect) {
@@ -761,7 +761,7 @@ export default function AILearningWorkspace({ skill, assignment, onExit, onSkill
                                  disabled={status === 'checked'}
                                  type="button"
                                  onClick={() => setBuiltWordIds(prev => [...prev, wordObj.id])}
-                                 className="px-4 py-2 bg-white border-2 border-b-4 border-zinc-200/80 rounded-xl font-medium text-slate-700 hover:bg-slate-50 active:border-b-2 active:translate-y-[2px] transition-all cursor-pointer"
+                                 className="px-4 py-2 bg-white border-2 border-b-4 border-zinc-200/80 hover:border-slate-950 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:scale-[1.06] active:scale-95 active:border-b-2 active:translate-y-[2px] transition-all duration-150 cursor-pointer shadow-xs"
                                >
                                  {wordObj.word}
                                </button>

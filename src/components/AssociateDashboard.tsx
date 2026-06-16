@@ -271,15 +271,15 @@ export default function AssociateDashboard({
           <button
             id="ask-apollo-associate-button"
             onClick={onAskApollo}
-            className="flex items-center gap-1.5 sm:gap-2 py-1.5 sm:py-2 px-3 sm:px-4 bg-slate-950 hover:bg-slate-900 text-white rounded-full text-[10px] sm:text-xs font-semibold tracking-tight transition-all shadow-sm shrink-0 cursor-pointer"
+            className="flex items-center gap-1.5 sm:gap-2 py-1.5 sm:py-2 px-3 sm:px-4 bg-slate-950 hover:bg-slate-900 active:scale-95 hover:scale-105 active:bg-slate-950 text-white rounded-full text-[10px] sm:text-xs font-semibold tracking-tight transition-all duration-200 shadow-sm hover:shadow-[0_4px_12px_rgba(99,102,241,0.15)] shrink-0 cursor-pointer"
           >
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:animate-pulse" />
             <span>Ask Apollo</span>
           </button>
 
           <button 
             onClick={onExit}
-            className="text-[10px] sm:text-xs font-mono tracking-wider font-semibold uppercase text-slate-400 hover:text-slate-900 transition-colors border-b border-transparent hover:border-slate-900 pb-0.5 whitespace-nowrap"
+            className="text-[10px] sm:text-xs font-mono tracking-wider font-semibold uppercase text-slate-400 hover:text-slate-900 hover:scale-[1.02] active:scale-98 transition-all duration-200 border-b border-transparent hover:border-slate-900 pb-0.5 whitespace-nowrap flex items-center gap-1"
           >
             <span className="sm:inline hidden">&larr; Switch Space</span>
             <span className="inline sm:hidden">&larr; Switch</span>
@@ -326,11 +326,11 @@ export default function AssociateDashboard({
                   <div 
                     key={asg.skillId}
                     onClick={() => handleStartCourse(asg.skillId)}
-                    className="group bg-white p-8 rounded-[2rem] border border-zinc-200/80 hover:border-zinc-350 hover:shadow-[0_8px_30px_rgba(0,0,0,0.02)] transition-all duration-300 flex flex-col justify-between h-full cursor-pointer relative"
+                    className="group bg-white p-8 rounded-[2.25rem] border border-zinc-200/80 hover:border-slate-950 hover:shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:scale-[1.03] active:scale-98 transition-all duration-300 ease-out flex flex-col justify-between h-full cursor-pointer relative"
                   >
                     <div className="space-y-6">
                       <div className="space-y-2">
-                        <h4 className="text-xl font-display font-medium text-slate-950 leading-snug group-hover:text-indigo-650 transition-colors pr-4">
+                        <h4 className="text-xl font-display font-medium text-slate-955 leading-snug group-hover:text-indigo-650 transition-colors pr-4">
                           {skillDetails.title}
                         </h4>
                         <p className="text-xs text-slate-500 leading-relaxed font-normal line-clamp-3">
@@ -341,19 +341,19 @@ export default function AssociateDashboard({
 
                     <div className="pt-8 mt-10 border-t border-zinc-100 space-y-3.5">
                       <div className="flex justify-between items-baseline text-xs font-mono">
-                        <span className="text-slate-400">Completion score</span>
-                        <strong className="text-slate-900">{asg.currentScore}% is {asg.targetScore}% min</strong>
+                        <span className="text-slate-450 group-hover:text-slate-950 transition-colors">Completion score</span>
+                        <strong className="text-slate-900">{asg.currentScore}% of {asg.targetScore}% min</strong>
                       </div>
 
                       <div className="w-full bg-zinc-100 h-1.5 rounded-full overflow-hidden">
                         <div 
-                          className={`h-full transition-all duration-500 ease-out ${isSecured ? 'bg-emerald-500' : 'bg-slate-950'}`}
+                          className={`h-full transition-all duration-500 ease-out ${isSecured ? 'bg-emerald-500' : 'bg-slate-950 group-hover:bg-indigo-600'}`}
                           style={{ width: `${Math.min((asg.currentScore / asg.targetScore) * 100, 100)}%` }}
                         />
                       </div>
                     </div>
 
-                    <div className="absolute top-8 right-8 text-zinc-300 group-hover:text-slate-800 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <div className="absolute top-8 right-8 text-zinc-300 group-hover:text-slate-950 transition-all duration-300 transform group-hover:translate-x-1.5 group-hover:-translate-y-1.5">
                       <ArrowUpRight className="w-5 h-5 shrink-0" />
                     </div>
                   </div>

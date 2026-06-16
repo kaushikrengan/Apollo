@@ -215,7 +215,7 @@ export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
               <button
                 id="close-apollo-chat"
                 onClick={onClose}
-                className="p-2 text-slate-400 hover:text-slate-900 hover:bg-zinc-100 rounded-xl transition-all cursor-pointer"
+                className="p-2 text-slate-400 hover:text-slate-900 hover:bg-zinc-100 active:scale-90 hover:scale-115 hover:rotate-90 rounded-xl transition-all duration-300 cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -276,10 +276,10 @@ export default function ApolloChat({ isOpen, onClose, role }: ApolloChatProps) {
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(prompt)}
-                      className="text-xs left-transparent py-2.5 px-4 bg-white hover:bg-zinc-50 border border-zinc-200 hover:border-zinc-300 rounded-xl text-slate-750 text-left transition-all flex items-center justify-between gap-2 cursor-pointer w-full"
+                      className="group text-xs py-2.5 px-4 bg-white hover:bg-slate-50 border border-zinc-200 hover:border-slate-950 hover:scale-[1.01] active:scale-99 rounded-xl text-slate-750 text-left transition-all duration-200 flex items-center justify-between gap-2 cursor-pointer w-full shadow-xs"
                     >
-                      <span>{prompt}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span className="font-medium group-hover:text-slate-950 transition-colors">{prompt}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-950 group-hover:translate-x-1.5 transition-all duration-200 shrink-0" />
                     </button>
                   ))}
                 </div>

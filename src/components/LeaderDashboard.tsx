@@ -199,15 +199,15 @@ export default function LeaderDashboard({
           <button
             id="ask-apollo-leader-button"
             onClick={onAskApollo}
-            className="flex items-center gap-1.5 sm:gap-2 py-1.5 sm:py-2 px-3 sm:px-4 bg-slate-950 hover:bg-slate-900 text-white rounded-full text-[10px] sm:text-xs font-semibold tracking-tight transition-all shadow-sm shrink-0 cursor-pointer"
+            className="flex items-center gap-1.5 sm:gap-2 py-1.5 sm:py-2 px-3 sm:px-4 bg-slate-950 hover:bg-slate-900 active:scale-95 hover:scale-105 transition-all duration-200 text-white rounded-full text-[10px] sm:text-xs font-semibold tracking-tight shadow-sm hover:shadow-[0_4px_12px_rgba(99,102,241,0.15)] shrink-0 cursor-pointer"
           >
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:scale-110" />
             <span>Ask Apollo</span>
           </button>
 
           <button 
             onClick={onExit}
-            className="text-[10px] sm:text-xs font-mono tracking-wider font-semibold uppercase text-slate-400 hover:text-slate-900 transition-colors border-b border-transparent hover:border-slate-900 pb-0.5 whitespace-nowrap"
+            className="text-[10px] sm:text-xs font-mono tracking-wider font-semibold uppercase text-slate-400 hover:text-slate-900 hover:scale-[1.02] active:scale-98 transition-all duration-200 border-b border-transparent hover:border-slate-900 pb-0.5 whitespace-nowrap"
           >
             <span className="sm:inline hidden">Switch Space &rarr;</span>
             <span className="inline sm:hidden">Switch &rarr;</span>
@@ -232,7 +232,7 @@ export default function LeaderDashboard({
           {!isCreating && (
             <button
               onClick={() => setIsCreating(true)}
-              className="flex items-center gap-2 px-6 py-3.5 bg-slate-950 hover:bg-zinc-850 active:bg-slate-950 text-white rounded-2xl text-xs uppercase tracking-widest font-semibold transition-all shadow-md shrink-0 sm:mb-2 cursor-pointer w-full sm:w-auto justify-center"
+              className="flex items-center gap-2 px-6 py-3.5 bg-slate-950 hover:bg-slate-900 active:scale-95 hover:scale-[1.03] text-white rounded-2xl text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-md shrink-0 sm:mb-2 cursor-pointer w-full sm:w-auto justify-center"
             >
               <Plus className="w-4 h-4" /> Define Competency
             </button>
@@ -429,7 +429,7 @@ export default function LeaderDashboard({
                       return (
                         <div 
                           key={comp.id}
-                          className="bg-white border border-zinc-200/80 rounded-[2.25rem] p-8 hover:shadow-[0_8px_30px_rgba(0,0,0,0.02)] transition-all duration-300 flex flex-col justify-between"
+                          className="bg-white border border-zinc-200/80 rounded-[2.25rem] p-8 hover:border-slate-950 hover:shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between cursor-default group"
                         >
                           <div className="space-y-6">
 

@@ -193,20 +193,24 @@ export default function App() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl text-left">
         <button 
           onClick={() => setSelectedRole('Associate')}
-          className="flex flex-col items-start p-8 bg-white border border-zinc-200/80 rounded-[2rem] hover:border-slate-400 hover:shadow-lg transition-all group cursor-pointer"
+          className="flex flex-col items-start p-8 bg-white border border-zinc-200/80 rounded-[2rem] hover:border-slate-950 hover:shadow-[0_12px_40px_rgba(0,0,0,0.04)] hover:scale-[1.03] active:scale-98 transition-all duration-300 ease-out group cursor-pointer"
         >
-          <Users className="w-8 h-8 text-slate-400 group-hover:text-slate-900 mb-6 transition-colors" />
-          <strong className="text-xl font-medium text-slate-900 mb-2">Associate Space</strong>
-          <span className="text-sm text-slate-500">View your assigned skills, complete learning modules, and track your progress.</span>
+          <div className="p-3 bg-slate-50 border border-zinc-100 rounded-2xl mb-6 group-hover:bg-slate-950 group-hover:border-slate-950 transition-colors duration-300">
+            <Users className="w-6 h-6 text-slate-550 group-hover:text-white transition-colors duration-300 group-hover:scale-110 transform transition-transform" />
+          </div>
+          <strong className="text-xl font-medium text-slate-900 mb-2 group-hover:text-slate-955 transition-colors">Associate Space</strong>
+          <span className="text-sm text-slate-500 leading-relaxed">View your assigned skills, complete learning modules, and track your progress.</span>
         </button>
 
         <button 
           onClick={() => setSelectedRole('Manager')}
-          className="flex flex-col items-start p-8 bg-white border border-zinc-200/80 rounded-[2rem] hover:border-slate-400 hover:shadow-lg transition-all group cursor-pointer"
+          className="flex flex-col items-start p-8 bg-white border border-zinc-200/80 rounded-[2rem] hover:border-slate-950 hover:shadow-[0_12px_40px_rgba(0,0,0,0.04)] hover:scale-[1.03] active:scale-98 transition-all duration-300 ease-out group cursor-pointer"
         >
-          <Award className="w-8 h-8 text-slate-400 group-hover:text-slate-900 mb-6 transition-colors" />
-          <strong className="text-xl font-medium text-slate-900 mb-2">Manager Space</strong>
-          <span className="text-sm text-slate-500">Define competencies, generate skills with AI, and track team learning progress.</span>
+          <div className="p-3 bg-slate-50 border border-zinc-100 rounded-2xl mb-6 group-hover:bg-slate-950 group-hover:border-slate-950 transition-colors duration-300">
+            <Award className="w-6 h-6 text-slate-550 group-hover:text-white transition-colors duration-300 group-hover:scale-110 transform transition-transform" />
+          </div>
+          <strong className="text-xl font-medium text-slate-900 mb-2 group-hover:text-slate-955 transition-colors">Manager Space</strong>
+          <span className="text-sm text-slate-500 leading-relaxed">Define competencies, generate skills with AI, and track team learning progress.</span>
         </button>
       </div>
     </div>
