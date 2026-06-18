@@ -370,26 +370,6 @@ export default function App() {
 
       {/* Main Login Screen Content Wrapper */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center w-full max-w-2xl">
-        {/* Animated Logo wrapper targeted by the CSS Selector */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1,
-            y: [0, -6, 0]
-          }}
-          whileHover={{ scale: 1.1, rotate: 12 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{
-            opacity: { duration: 0.5 },
-            scale: { duration: 0.5 },
-            y: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
-          }}
-          className="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center text-white mb-8 shadow-md cursor-pointer"
-        >
-          <Sparkles className="w-8 h-8" />
-        </motion.div>
-        
         <h1 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-[0.25em] text-slate-950 mb-4">
           Apollo
         </h1>
